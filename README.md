@@ -1,10 +1,8 @@
-# GroupMe NodeJS Callback Bot for DaddyLeagues Integration
+# GroupMe NodeJS Callback Bot
 
 ## Introduction
 
-This guide was partially written by me in order to more easily get your code up and running without needing a lot of the technical knowledge necessary to create a bot.  Most of the code and half of the readme was forked from https://github.com/groupme/bot-tutorial-nodejs and modified for my own needs. I've gotten a lot of requests from people to implement the bot in their GroupMe, but I don't have the time to do them all so I'm writing this guide as the guide in the previous Git is unfollowable without further explanation. This is meant to be used to setup a bot to integrate Daddyleagues more easily with GroupMe.
-
-Any questions can be directed to /u/SharpObject on Reddit.
+This guide was written in order to more easily get your code up and running without needing a lot of the technical knowledge necessary to create a bot.  Most of the code and half of the readme was forked from https://github.com/groupme/bot-tutorial-nodejs and modified for my own needs.
 
 
 ## Requirements:
