@@ -19,6 +19,11 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+  else if(request.text && botRegexHelp.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("I am here to help! Here is a list of things I can do:\n/duty - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n/salt - Don't use unless things get salty\n/cool guy - Sends a cool guy face" );
+    this.res.end();
+  } 
   else if(request.text && botRegexDuty.test(request.text)) {
     this.res.writeHead(200);
     var d = new Date();
