@@ -64,16 +64,16 @@ function respond() {
           var now = jan[day]
           if (now.indexOf("Tanner") > -1) {
             found = 1;
-          } else {
+          }  else {
             day = day + 1;
           }
         }
         postMessage("Tanner, your next duty night is on Jan" + day );
+      
       }
-    
     postMessage("Tanner, your next duty night is on " + );
     this.res.end();
-  }   
+  }
   
   
   else {
@@ -81,7 +81,7 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
-}
+
 
 function postMessage(response) {
   var botResponse,options, body, botReq;
