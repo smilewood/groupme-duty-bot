@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
+      botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
       botRegexHelp = /^\/help/;
     //Arrays of duty partners
   var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
@@ -21,7 +21,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("I am here to help! Here is a list of things I can do:\n/duty - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n/salt - Don't use unless things get salty\n/cool guy - Sends a cool guy face" );
+    postMessage("I am here to help! Here is a list of things I can do:\n/duty - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n/salt - Don't use unless things get salty\n/cool - Sends a cool emoji face" );
     this.res.end();
   } 
   else if(request.text && botRegexDuty.test(request.text)) {
@@ -54,7 +54,7 @@ function respond() {
     this.res.end();
   } 
   
-  
+
   else {
     console.log("don't care");
     this.res.writeHead(200);
