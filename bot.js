@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/;
+      botRegex = /^\/cool guy/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/duty tomorrow/;
   
     //Arrays of duty partners
   var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
@@ -29,6 +29,18 @@ function respond() {
       people = jan[day];
     }
     postMessage("Today " + people + " are on duty");
+    this.res.end();
+  } 
+   else if(request.text && botRegexDuty2.test(request.text)) {
+    this.res.writeHead(200);
+    var d = new Date();
+    var month = d.getMonth();
+    var day = d.getDate();
+    var people = "";
+    if (month == 0) {
+      people = jan[day+1];
+    }
+    postMessage("Tomorrow " + people + " are on duty");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
