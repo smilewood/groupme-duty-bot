@@ -61,7 +61,7 @@ function respond() {
     var found = 0;
       if (month == 0) {
         while (day <= 31 && found == 0) {
-          var now = jan[day]
+          var now = jan[day];
           if (now.indexOf("Tanner") > -1) {
             found = 1;
           }  else {
