@@ -1,4 +1,4 @@
- var HTTPS = require('https');
+var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexHelp = /^\/help/;// botRegexTan = /^\/tanner/;
+      botRegexHelp = /^\/help/;
     //Arrays of duty partners
   var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
   var feb = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",]; 
@@ -53,27 +53,6 @@ function respond() {
     postMessage("https://i.imgur.com/B5BSVqH.png");
     this.res.end();
   } 
-//   else if(request.text && botRegexTan.test(request.text)) {
-//     this.res.writeHead(200);
-//     var d = new Date();
-//     var month = d.getMonth();
-//     var day = d.getDate();
-//     var found = 0;
-//       if (month == 0) {
-//         while (day <= 31 && found == 0) {
-//           var now = jan[day];
-//           if (now.indexOf("Tanner") > -1) {
-//             found = 1;
-//           }  else {
-//             day = day + 1;
-//           }
-//         }
-//         postMessage("Tanner, your next duty night is on Jan" + day );
-      
-//       }
-    
-//     this.res.end();
-//   }
   
   
   else {
@@ -81,7 +60,7 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
-
+}
 
 function postMessage(response) {
   var botResponse,options, body, botReq;
