@@ -71,7 +71,7 @@ function respond() {
         postMessage("Tanner, your next duty night is on Jan" + day );
       
       }
-    postMessage("Tanner, your next duty night is on " + );
+    
     this.res.end();
   }
   
