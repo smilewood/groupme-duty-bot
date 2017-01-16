@@ -45,6 +45,7 @@ function respond() {
     if (month == 0) {
       people = jan[day+1];
     }
+    postMessage(d.toString);
     postMessage("Tomorrow " + people + " are on duty");
     this.res.end();
   } 
