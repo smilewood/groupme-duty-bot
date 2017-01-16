@@ -108,7 +108,7 @@ function getRandomInt(min, max) {
 function convertUTCDateToLocalDate(date) {
     var newDate = new Date();
 
-    var offset = -7;
+    var offset = 7;
     var hours = date.getHours();
 
     newDate.setHours(hours - offset);
