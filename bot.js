@@ -41,7 +41,7 @@ function respond() {
   } 
    else if(request.text && botRegexDuty2.test(request.text)) {
     this.res.writeHead(200);
-    var d = new Date();
+    var d = convertUTCDateToLocalDate(new Date());
     var month = d.getMonth();
     var day = d.getDate();
     var people = "";
