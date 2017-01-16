@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexHelp = /^\/help/;
+      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; 
 
   //Arrays of duty partners
   var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
@@ -29,7 +29,7 @@ function respond() {
   else if(request.text && botRegexDuty.test(request.text)) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
-    postMessage(d.toString());
+//    postMessage(d.toString());
     var month = d.getMonth();
     var day = d.getDate();
     var people = "";
@@ -55,6 +55,16 @@ function respond() {
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.imgur.com/B5BSVqH.png");
+    this.res.end();
+  } 
+  else if(request.text && botRegexUp.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("New in this update:\nI'm no longer in the wrong timezone! (Sorry for the confusion)");
+    this.res.end();
+  } 
+  else if(request.text && botRegexSor.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
     this.res.end();
   } 
   
