@@ -1,7 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var moment = require('moment');
-moment().format();
+
 
 var botID = process.env.BOT_ID;
 
@@ -69,7 +68,7 @@ function respond() {
 function postMessage(response) {
   var botResponse,options, body, botReq;
 
-  botResponse = response
+  botResponse = response;
 
   options = {
     hostname: 'api.groupme.com',
