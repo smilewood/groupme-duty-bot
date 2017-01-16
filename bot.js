@@ -27,6 +27,7 @@ function respond() {
   else if(request.text && botRegexDuty.test(request.text)) {
     this.res.writeHead(200);
     var d = new Date();
+    postMessage(d.toString);
     var month = d.getMonth();
     var day = d.getDate();
     var people = "";
@@ -45,7 +46,7 @@ function respond() {
     if (month == 0) {
       people = jan[day+1];
     }
-    postMessage(d.toString);
+    
     postMessage("Tomorrow " + people + " are on duty");
     this.res.end();
   } 
