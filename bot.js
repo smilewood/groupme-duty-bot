@@ -27,7 +27,7 @@ function respond() {
   else if(request.text && botRegexDuty.test(request.text)) {
     this.res.writeHead(200);
     var d = new Date();
-    postMessage(d.toString);
+    postMessage(d.toString());
     var month = d.getMonth();
     var day = d.getDate();
     var people = "";
