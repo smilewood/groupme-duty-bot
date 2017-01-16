@@ -29,16 +29,9 @@ function respond() {
   } 
   else if(request.text && botRegexDuty.test(request.text)) {
     this.res.writeHead(200);
-    var divUtc = $('#divUTC');
-    var divLocal = $('#divLocal');  
-    //put UTC time into divUTC  
-    divUtc.text(moment.utc().format('YYYY-MM-DD HH:mm:ss'));      
-    
-    //get text from divUTC and conver to local timezone  
-    var localTime  = moment.utc(divUtc.text()).toDate();        
-    var month = localtime.months();
-    var day = localtime.date();
-    postMessage(localtime.text());
+    var d = convertUTCDateToLocalDate(new Date());
+    var month = d.getMonth();
+    var day = d.getDate();
     var people = "";
     if (month == 0) {
       people = jan[day];
@@ -112,5 +105,14 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function convertUTCDateToLocalDate(date) {
+    var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
 
+    var offset = date.getTimezoneOffset() / 60;
+    var hours = date.getHours();
+
+    newDate.setHours(hours - offset);
+
+    return newDate;   
+}
 exports.respond = respond;
