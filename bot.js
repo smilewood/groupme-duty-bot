@@ -106,9 +106,9 @@ function getRandomInt(min, max) {
 }
 
 function convertUTCDateToLocalDate(date) {
-    var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+    var newDate = new Date();
 
-    var offset = date.getTimezoneOffset() / 60;
+    var offset = -7;
     var hours = date.getHours();
 
     newDate.setHours(hours - offset);
