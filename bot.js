@@ -76,7 +76,7 @@ function respond() {
   } 
    else if(request.text && botRegexV.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://imgur.com/sCrUuj6");
+    postMessage("http://i.imgur.com/sCrUuj6.jpg");
     this.res.end();
   } 
   
