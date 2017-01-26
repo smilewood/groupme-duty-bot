@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; 
+      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexBirb = /^\#birdsupport/; 
 
   //Arrays of duty partners
   var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
@@ -65,6 +65,12 @@ function respond() {
   else if(request.text && botRegexSor.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
+    this.res.end();
+  }  
+  else if(request.text && botRegexBirb.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i.imgur.com/CcQTXgp.jpg");
+    postMessage("http://i.imgur.com/dwRfrQm.gifv");
     this.res.end();
   } 
   
