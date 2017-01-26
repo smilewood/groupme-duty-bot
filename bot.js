@@ -70,7 +70,7 @@ function respond() {
   else if(request.text && botRegexBirb.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://i.imgur.com/CcQTXgp.jpg");
-    postMessage("http://i.imgur.com/dwRfrQm.gifv");
+    postMessage("http://imgur.com/dwRfrQm");
     this.res.end();
   } 
   
