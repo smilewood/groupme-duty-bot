@@ -39,10 +39,10 @@ function respond() {
       people = jan[day];
     }
     else if (month == 1) {
-      people = feb[day];
+      people = feb[day-1];
     }
     else if (month == 2) {
-      people = mar[day];
+      people = mar[day-1];
     }
     postMessage("Today " + people + " are on duty");
     this.res.end();
@@ -57,10 +57,10 @@ function respond() {
       people = jan[day+1];
     }
      else if (month == 1) {
-      people = feb[day+1];
+      people = feb[day];
     }
     else if (month == 2) {
-      people = mar[day+1];
+      people = mar[day];
     }
     
     postMessage("Tomorrow " + people + " are on duty");
