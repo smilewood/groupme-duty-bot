@@ -33,6 +33,7 @@ function respond() {
 //    postMessage(d.toString());
     var month = d.getMonth();
     var day = d.getDate();
+    postMessage(day);
     var people = "";
     if (month == 0) {
       people = jan[day];
