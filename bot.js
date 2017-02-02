@@ -12,8 +12,8 @@ function respond() {
 
   //Arrays of duty partners
   var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
-  var feb = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",]; 
-  var mar = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",]; 
+  var feb = ["Rachel T. and Kellie", "Julia and Gabriella", "Luke and Austin", "Luke and Austin", "Frida and Max", "Tanner and Ashton", "Austin and Rachel M.", "Matt and Kellie", "Braede and Austin", "Rachel M. and Coby", "Rachel M. and Coby", "Rachel T. and Frida", "Tanner and Emma", "Ashton and Kellie", "Rachel T. and Gabriella", "Austin and Julia", "Matt and Frida", "Matt and Frida", "Coby and Max", "Tanner and Emma", "Rachel M. and julia", "Matt and Luke", "Coby and Frida", "Tanner and Kellie", "Tanner and Kellie", "Braede and Luke", "Luka and Kellie", "Austin and Gabriella", "", ""]; 
+  var mar = ["Matt and Rachel M.", "Austin and Emma", "Gabriella and Julia", "Gabriella and Julia", "Matt and Ashton", "Tanner and Emma", "Ashton and Gabriella", "Coby and Kellie", "Julia and Coby", "Luke and Frida", "Luke and Frida", "Some random people", "That one person", "?????????", "My favorite person whose name I forgot", "IDK who", "I can't always tell you who", "That one RA with the face and the one with the hair", "Max and Frida", "Tanner and Emma", "Rachel M. Gabriella", "Rachel T. and Julia", "Gabriella and Braede", "Coby and Ashton", "Coby and Ashton", "Max and Braede", "Julia and Kellie", "Rachel M. and Ashton", "Matt and Braede", "Austin and Emma", "Austin and Rachel T."]; 
   var apr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",]; 
   var may = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",]; 
 
@@ -37,6 +37,12 @@ function respond() {
     if (month == 0) {
       people = jan[day];
     }
+    else if (month == 1) {
+      people = feb[day];
+    }
+    else if (month == 2) {
+      people = mar[day];
+    }
     postMessage("Today " + people + " are on duty");
     this.res.end();
   } 
@@ -49,6 +55,12 @@ function respond() {
     if (month == 0) {
       people = jan[day+1];
     }
+     else if (month == 1) {
+      people = feb[day+1];
+    }
+    else if (month == 2) {
+      people = mar[day+1];
+    }
     
     postMessage("Tomorrow " + people + " are on duty");
     this.res.end();
