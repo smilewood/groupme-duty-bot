@@ -72,9 +72,9 @@ function respond() {
     if (day % 2 == 0) {
       postMessage("Today " + people + " are on duty");
     } else if (day % 3 == 0) {
-        postMessage("Today's lucky winners are" + people);
+        postMessage("Today's lucky winners are " + people);
     } else {
-        postMessage(people + "get to go fight the good fight tonight");
+        postMessage(people + " get to go fight the good fight tonight");
     }
     this.res.end();
   } 
@@ -117,9 +117,9 @@ function respond() {
     if (day % 2 == 0) {
       postMessage("Tomorrow " + people + " are on duty");
     } else if (day % 3 == 0) {
-        postMessage("Tomorrow's Hunger Games tributes are" + people);
+        postMessage("Tomorrow's Hunger Games tributes are " + people);
     } else {
-        postMessage(people + "are out to save the world tomorrow ");
+        postMessage(people + " are out to save the world tomorrow ");
     }
     this.res.end();
   } 
