@@ -87,7 +87,7 @@ function respond() {
     var day = d.getDate();
     var people = "";
     if (month == 0) {
-      people = jan[day+1];
+      people = jan[day];
     }
      else if (month == 1) {
       people = feb[day];
@@ -101,9 +101,30 @@ function respond() {
     else if (month == 4) {
       people = may[day];
     }
-    
-    postMessage("Tomorrow " + people + " are on duty");
+     else if (month == 7) {
+      people = aug[day];
+    }
+     else if (month == 8) {
+      people = sep[day];
+    }
+     else if (month == 9) {
+      people = oct[day];
+    }
+     else if (month == 10) {
+      people = nov[day];
+    }
+     else if (month == 11) {
+      people = dec[day];
+    }
+    if (day % 2 == 0) {
+      postMessage("Tomorrow " + people + " are on duty");
+    } else if (day % 3 == 0) {
+        postMessage("Tomorrow's Hunger Games tributes are " + people);
+    } else {
+        postMessage(people + " are out to save the world tomorrow ");
+    }
     this.res.end();
+
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
