@@ -6,20 +6,16 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; botRegexDuty3 = /^\/today/; 
-      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; 
+      botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
+      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexBirb = /^\#birdsupport/; 
+      botRegexV = /^\/V/; 
 
   //Arrays of duty partners
-  var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var feb = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var mar = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var apr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var may = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var aug = ["", "", "", "", "", "", "", "", "", "", "", "Garrett and Monica", "Heidi and Brennan", "Everton and jacob", "Garrett and Monica", "Armani and Marilynn", "Acacia and Emily", "Julianne and Victoria", "Julianne and Victoria", "Marilynn and Victoria", "Tanner and Jared", "Tavious and Olivia", "Armani and Haneen", "Tavious and Keely", "Emily and Tanner", "Emily and Tanner", "Heidi and Haneen", "Victoria and Jared", "Acacia and Julianne", "Anna and Brennan", "Julianne and Anna", ""]; 
-  var sep = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var oct = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var nov = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var dec = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
+  var jan = ["no one", "no one", "no one", "no one", "no one", "no one", "no one", "Julia and Rachel T.", "Coby and Luke", "Emma and Tanner", "Braede and Gabby", "Frida and Matt", "Max and Kellie", "Austin and Ashton", "Luke and Ashton", "Max and Braede", "Luke and Frida", "Matt and Ashton", "Rachel T. and Frida", "Ashton and Luke", "Emma and Braede", "Emma and Braede", "Max and Luke", "Emma and Luke", "Matt and Coby", "Julia and Kellie", "Braded and Austin", "Ashton and Max", "Ashton and Max", "Max and Braede", "Tanner and Emma", "Coby and Max"]; 
+  var feb = ["Rachel T. and Kellie", "Julia and Gabriella", "Luke and Austin", "Luke and Austin", "Frida and Max", "Tanner and Ashton", "Austin and Rachel M.", "Matt and Kellie", "Braede and Austin", "Rachel M. and Coby", "Rachel M. and Coby", "Rachel T. and Frida", "Tanner and Emma", "Ashton and Kellie", "Rachel T. and Gabriella", "Austin and Julia", "Matt and Frida", "Matt and Frida", "Coby and Max", "Tanner and Emma", "Rachel M. and julia", "Matt and Luke", "Coby and Frida", "Tanner and Kellie", "Tanner and Kellie", "Braede and Luke", "Luka and Kellie", "Austin and Gabriella", "", ""]; 
+  var mar = ["Matt and Rachel M.", "Austin and Emma", "Gabriella and Julia", "Gabriella and Julia", "Matt and Ashton", "Tanner and Emma", "Ashton and Gabriella", "Coby and Kellie", "Julia and Coby", "Luke and Frida", "Luke and Frida", "Some random people", "That one person", "?????????", "My favorite person whose name I forgot", "IDK who", "I can't always tell you who", "That one RA with the face and the one with the hair", "Max and Frida", "Tanner and Emma", "Rachel M. Gabriella", "Gabriella and Julia", "Rachel M. and Braede", "Coby and Luke", "Coby and Luke", "Max and Braede", "Julia and Kellie", "Rachel M. and Ashton", "Matt and Braede", "Austin and Emma", "Austin and Rachel T."]; 
+  var apr = ["Austin and Telljohn", "Max and Kellie", "Tanner and Luke", "Austin and Telljohn", "McCormick and Kellie", "Julia and Gabby", "McCormick and Braede", "McCormick and Braede", "Telljohn and Frida", "Tanner and Max", "Coby and Gabby", "Julia and McCormick", "Frida and Braede", "Emma and Max", "Emma and Max", "Julia and Matt", "Tanner and Kellie", "Matt and Gabby", "Coby and Austin", "Braede and McCormick", "Matt and Austin", "Matt and Austin", "Luke and Emma", "Tanner and Ashton", "Telljohn and Gabby", "Frida and Matt", "Coby and McCormick", "Kellie and Julia", "Kellie and Julia", "Telljohn and Frida",]; 
+  var may = ["Ashton and Emma", "Telljohn and McCormick", "Emma and Gabby", "Coby and McCormick", "Tanner and Gabriella", "Tanner and Gabriella", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",]; 
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -40,88 +36,46 @@ function respond() {
     
     var people = "";
     if (month == 0) {
-      people = jan[day-1];
+      people = jan[day];
     }
     else if (month == 1) {
       people = feb[day-1];
     }
     else if (month == 2) {
-      people = mar[day-1];
-    }
-    else if (month == 3) {
-      people = apr[day-1];
-    }
-    else if (month == 4) {
-      people = may[day-1];
-    }
-    else if (month == 7) {
-      people = aug[day-1];
-    }
-     else if (month == 8) {
-      people = sep[day-1];
-    }
-     else if (month == 9) {
-      people = oct[day-1];
-    }
-     else if (month == 10) {
-      people = nov[day-1];
-    }
-     else if (month == 11) {
-      people = dec[day-1];
-    }
-    if (day % 2 == 0) {
-      postMessage("Today " + people + " are on duty");
-    } else if (day % 3 == 0) {
-        postMessage("Today's lucky winners are " + people);
-    } else {
-        postMessage(people + " get to go fight the good fight tonight");
+      people = mar[day-1];
     }
+    else if (month == 3) {
+      people = apr[day-1];
+    }
+    else if (month == 4) {
+      people = may[day-1];
+    }
+    postMessage("Today " + people + " are on duty");
     this.res.end();
   } 
    else if(request.text && botRegexDuty2.test(request.text)) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
-         postMessage(d.toString());
     var month = d.getMonth();
     var day = d.getDate();
     var people = "";
     if (month == 0) {
-      people = jan[day];
+      people = jan[day+1];
     }
      else if (month == 1) {
       people = feb[day];
     }
     else if (month == 2) {
-      people = mar[day];
-    }
-     else if (month == 3) {
-      people = apr[day];
-    }
-    else if (month == 4) {
-      people = may[day];
-    }
-     else if (month == 7) {
-      people = aug[day];
-    }
-     else if (month == 8) {
-      people = sep[day];
-    }
-     else if (month == 9) {
-      people = oct[day];
-    }
-     else if (month == 10) {
-      people = nov[day];
-    }
-     else if (month == 11) {
-      people = dec[day];
-    }
-    if (day % 2 == 0) {
-      postMessage("Tomorrow " + people + " are on duty");
-    } else if (day % 3 == 0) {
-        postMessage("Tomorrow's Hunger Games tributes are " + people);
-    } else {
-        postMessage(people + " are out to save the world tomorrow ");
+      people = mar[day];
     }
+     else if (month == 3) {
+      people = apr[day];
+    }
+    else if (month == 4) {
+      people = may[day];
+    }
+    
+    postMessage("Tomorrow " + people + " are on duty");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
@@ -208,3 +162,4 @@ function convertUTCDateToLocalDate(date) {
     return newDate;   
 }
 exports.respond = respond;
+
