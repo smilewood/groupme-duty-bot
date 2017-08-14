@@ -32,7 +32,7 @@ function respond() {
     postMessage("I am here to help! Here is a list of things I can do:\n/duty - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n/salt - Don't use unless things get salty\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you don't know what else to say" );
     this.res.end();
   } 
-  else if(request.text && botRegexDuty.test(request.text)) {
+  else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
 //    postMessage(d.toString());
