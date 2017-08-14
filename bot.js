@@ -8,7 +8,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexBirb = /^\#birdsupport/; 
-      botRegexV = /^\/V/; 
+      botRegexV = /^\/V/; botRegexDuty3 = /^\/today/; 
 
     //Arrays of duty partners
   var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
@@ -41,7 +41,7 @@ function respond() {
     
     var people = "";
     if (month == 0) {
-      people = jan[day];
+      people = jan[day-1];
     }
     else if (month == 1) {
       people = feb[day-1];
@@ -55,8 +55,30 @@ function respond() {
     else if (month == 4) {
       people = may[day-1];
     }
-    postMessage("Today " + people + " are on duty");
+    else if (month == 7) {
+      people = aug[day-1];
+    }
+     else if (month == 8) {
+      people = sep[day-1];
+    }
+     else if (month == 9) {
+      people = oct[day-1];
+    }
+     else if (month == 10) {
+      people = nov[day-1];
+    }
+     else if (month == 11) {
+      people = dec[day-1];
+    }
+    if (day % 2 == 0) {
+      postMessage("Today " + people + " are on duty");
+    } else if (day % 3 == 0) {
+        postMessage("Today's lucky winners are " + people);
+    } else {
+        postMessage(people + " get to go fight the good fight tonight");
+    }
     this.res.end();
+
   } 
    else if(request.text && botRegexDuty2.test(request.text)) {
     this.res.writeHead(200);
