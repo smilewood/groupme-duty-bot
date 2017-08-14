@@ -7,8 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexBirb = /^\#birdsupport/; 
-      botRegexV = /^\/V/; botRegexDuty3 = /^\/today/; 
+      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
 
     //Arrays of duty partners
   var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
@@ -16,7 +15,7 @@ function respond() {
   var mar = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var apr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var may = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var aug = ["", "", "", "", "", "", "", "", "", "", "", "Garrett and Monica", "Heidi and Brennan", "Everton and jacob", "Garrett and Monica", "Armani and Marilynn", "Acacia and Emily", "Julianne and Victoria", "Julianne and Victoria", "Marilynn and Victoria", "Tanner and Jared", "Tavious and Olivia", "Armani and Haneen", "Tavious and Keely", "Emily and Tanner", "Emily and Tanner", "Heidi and Haneen", "Victoria and Jared", "Acacia and Julianne", "Anna and Brennan", "Julianne and Anna", ""]; 
+  var aug = ["", "", "", "", "", "", "", "", "", "", "", "Garrett and Monica", "Heidi and Brennan", "Everton and Jacob", "Garrett and Monica", "Armani and Marilynn", "Acacia and Emily", "Julianne and Victoria", "Julianne and Victoria", "Marilynn and Victoria", "Tanner and Jared", "Tavious and Olivia", "Armani and Haneen", "Tavious and Keely", "Emily and Tanner", "Emily and Tanner", "Heidi and Haneen", "Victoria and Jared", "Acacia and Julianne", "Anna and Brennan", "Julianne and Anna", ""]; 
   var sep = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var oct = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var nov = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
@@ -140,19 +139,8 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
     this.res.end();
-  }  
-  else if(request.text && botRegexBirb.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://imgur.com/dwRfrQm");
-    this.res.end();
-  } 
-   else if(request.text && botRegexV.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://i.imgur.com/sCrUuj6.jpg");
-    this.res.end();
-  } 
+  }
   
-
   else {
     console.log("don't care");
     this.res.writeHead(200);
