@@ -142,7 +142,11 @@ function respond() {
     postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
     this.res.end();
   }
-  
+  else if(request.text && botRegexTanner.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Tanner's Duty Dates:\nAug: 21st, 25th & 26th \nSept: 11th, 25th \nOct: 2nd, 16th, 25th, 30th \nNov: 8th\nDec: 4th, 8th & 9th\nGame Days: Sept 9th");
+    this.res.end();
+  } 
   else {
     console.log("don't care");
     this.res.writeHead(200);
