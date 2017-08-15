@@ -29,7 +29,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\nFuture Improvments include being able to type /yourname and get a list of duty dates. Let Tanner know if something is not working or there is a image or reaction you would like added." );
+    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n\nFuture Improvments include being able to type /yourname and get a list of duty dates. Let Tanner know if something is not working or there is a image or reaction you would like added." );
     this.res.end();
   } 
   else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
@@ -126,11 +126,7 @@ function respond() {
     this.res.end();
 
   } 
-  else if(request.text && botRegexTanner.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Tanner's Duty Dates:\nAug: 21st, 25th & 26th \nSept: 11th, 25th \nOct: 2nd, 16th, 25th, 30th \nNov: 8th\nDec: 4th, 8th & 9th\nGame Days: Sept 9th");
-    this.res.end();
-  } 
+  
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.imgur.com/B5BSVqH.png");
