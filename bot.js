@@ -188,7 +188,7 @@ function respond() {
   } 
   else if(request.text && botRegexHaneen.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Tanner's Duty Dates:\nAug: 23rd, 27th \nSept: 10th, 24th \nOct: 6th & 7th, 9th, 23rd \nNov: 6th, 28th\nDec: none\nGame Days: Oct 28th");
+    postMessage("Haneen's Duty Dates:\nAug: 23rd, 27th \nSept: 10th, 24th \nOct: 6th & 7th, 9th, 23rd \nNov: 6th, 28th\nDec: none\nGame Days: Oct 28th");
     this.res.end();
   } 
   else if(request.text && botRegexHeidi.test(request.text)) {
