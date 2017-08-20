@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; botRegexTanner = /^\/tanner/; botRegexAcacia = /^\/acacia/; botRegexAnna = /^\/anna/; botRegexArmani = /^\/armani/; botRegexBrennan = /^\/brennan/; botRegexEmily = /^\/emily/; botRegexEverton = /^\/everton/; botRegexGarrett = /^\/garrett/; botRegexGeorge = /^\/george/; botRegexHaneen = /^\/haneen/; botRegexHeidi = /^\/heidi/; botRegexJacob = /^\/jacob/; botRegexJared = /^\/jared/; botRegexJulianne = /^\/julianne/; botRegexKeely = /^\/keely/; botRegexMarilynn = /^\/marilynn/; botRegexMonica = /^\/monica/; botRegexOlivia = /^\/olivia/; botRegexTavious = /^\/tavious/; botRegexVictoria = /^\/victoria/; 
+      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJodran = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; botRegexV= /^\/v/; 
 
     //Arrays of duty partners
   var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
@@ -15,7 +15,7 @@ function respond() {
   var mar = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var apr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var may = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var aug = ["", "", "", "", "", "", "", "", "", "", "", "Garrett and Monica", "Heidi and Brennan", "Everton and Jacob", "Garrett and Monica", "Armani and Marilynn", "Acacia and Emily", "Julianne and Victoria", "Julianne and Victoria", "Marilynn and Victoria", "Tanner and Jared", "Tavious and Olivia", "Armani and Haneen", "Tavious and Keely", "Emily and Tanner", "Emily and Tanner", "Heidi and Haneen", "Victoria and Jared", "Acacia and Julianne", "Anna and Brennan", "Julianne and Anna", ""]; 
+  var aug = ["", "", "", "", "", "", "", "", "", "", "", "Michael and Luke", "Frida and Taylor", "Austin and Jordan", "Luke and David", "Emma and Cecilia", "Luke and David", "Luke and Michael", "Luke and Michael", "Frida and Jordan", "Austin and Makenzie", "Rachel and Taylor", "Emma and Michael", "Braden and Michael", "Rachel and Cecilia", "Rachel and Cecilia", "Rachel and David", "Ashton and Makenzie", "Frida and Jordan", "Emma and Cecilia", "Braden and Paige", ""]; 
   var sep = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var oct = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
   var nov = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
@@ -133,7 +133,7 @@ function respond() {
   } 
   else if(request.text && botRegexUp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("New in this update:\nAdded functions:\n\n/acacia\n/anna\n/armani\n/brennan\n/emily\n/everton\n/garrett\n/george\n/haneen\n/heidi\n/jacob\n/jared\n/julianne\n/keely\n/marilynn\n/monica\n/olivia\n/tanner\n/tavious\n/victoria\n");
+    postMessage("New in this update:\nAdded functions:\n\n/ashton\n/austin\n/braden\n/cecilia\n/christian\n/david\n/emma\n/frida\n/jen\n/jordan\n/makenzie\n/luke\n/michael\n/paige\n/rachel\n/taylor\n/v\n");
     this.res.end();
   } 
   else if(request.text && botRegexSor.test(request.text)) {
@@ -141,107 +141,86 @@ function respond() {
     postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
     this.res.end();
   }
-  else if(request.text && botRegexTanner.test(request.text)) {
+  else if(request.text && botRegexLuke.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Tanner's Duty Dates:\nAug: 21st, 25th & 26th \nSept: 11th, 25th \nOct: 2nd, 16th, 25th, 30th \nNov: 8th\nDec: 4th, 8th & 9th\nGame Days: Sept 9th");
+    postMessage("Luke's Duty Dates:\nAug: 12th, 15th, 17th, 18th, & 19th \nSept: 3rd, 4th, 13th, & 25th \nOct: 2nd, 8th, 9th, 20th, & 22nd \nNov: 9th, & 25th\nDec: None\nGame Days: None");
     this.res.end();
   } 
-  else if(request.text && botRegexAcacia.test(request.text)) {
+  else if(request.text && botRegexAshton.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Acacia's Duty Dates:\nAug: 17st, 29th \nSept: 10th, 14th \nOct: 3rd, 22nd, 31st \nNov: 2nd, 17th & 25th\nDec: none\nGame Days: Oct 14th");
+    postMessage("Ashton's Duty Dates:\nAug: None \nSept: 1st, 2nd, 11th, 18th, 22nd, 23rd, & 25th\nOct: 2nd, 5th, & 23rd \nNov: 2nd, & 14th\nDec: 4th\nGame Days: Aug 26th");
     this.res.end();
   } 
-  else if(request.text && botRegexAnna.test(request.text)) {
+  else if(request.text && botRegexAustin.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Anna's Duty Dates:\nAug: 30th, 31st \nSept: 4th, 21st, 22nd & 23rd \nOct: 1st, 17th \nNov: 2nd, 12th \nDec: none\nGame Days: Oct 14th");
+    postMessage("Austin's Duty Dates:\nAug: 14th, & 21st \nSept: 7th, 14th, 15th, & 16th\nOct: 9th, 13th, 14th, 17th, & 24th \nNov: 11th, 15th, & 27th\nDec: None\nGame Days: None");
     this.res.end();
   } 
-  else if(request.text && botRegexArmani.test(request.text)) {
+  else if(request.text && botRegexBraden.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Armani's Duty Dates:\nAug: 16th, 23rd \nSept: 5th, 15th & 16th, 27th \nOct: 3rd, 18th \nNov: 1st, 7th\nDec: 5th \nGame Days: none");
+    postMessage("Braden's Duty Dates:\nAug: 24th, & 31st \nSept: 5th, 15th & 16th, 27th \nOct: 3rd, 18th \nNov: 1st, 7th\nDec: 5th \nGame Days: none");
     this.res.end();
   } 
-  else if(request.text && botRegexBrennan.test(request.text)) {
+  else if(request.text && botRegexCecilia.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Brennan's Duty Dates:\nAug: 13th, 30th \nSept: 1st & 2nd, 19th, 28th \nOct: 10th, 11th, 27th & 28th \nNov: 16th, 27th\nDec: 4th, 8th & 9th\nGame Days: Nov 11th");
+    postMessage("Cecilia's Duty Dates:\nAug: 16th, 25th, 26th, & 30th\nSept: 1st & 2nd, 19th, 28th \nOct: 10th, 11th, 27th & 28th \nNov: 16th, 27th\nDec: 4th, 8th & 9th\nGame Days: Nov 11th");
     this.res.end();
   } 
-  else if(request.text && botRegexEmily.test(request.text)) {
+  else if(request.text && botRegexChristian.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Emily's Duty Dates:\nAug: 17th, 25th & 26th \nSept: 4th (Day Duty), 7th, 14th, 29th & 30th \nOct: 4th, 12th, 25th \nNov: 1st, 8th\nDec: none\nGame Days: none");
+    postMessage("Christian's Duty Dates:\nAug: None \nSept: 4th (Day Duty), 7th, 14th, 29th & 30th \nOct: 4th, 12th, 25th \nNov: 1st, 8th\nDec: none\nGame Days: none");
     this.res.end();
   } 
-  else if(request.text && botRegexEverton.test(request.text)) {
+  else if(request.text && botRegexDavid.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Everton's Duty Dates:\nAug: 14th \nSept: 6th, 15th & 16th, 18th, 27th \nOct: 4th, 11th, 31st \nNov: 10th and 11th, 15th, 29th\nDec: none\nGame Days: none");
+    postMessage("David's Duty Dates:\nAug: 15th, 17th, & 27th \nSept: 6th, 15th & 16th, 18th, 27th \nOct: 4th, 11th, 31st \nNov: 10th and 11th, 15th, 29th\nDec: none\nGame Days: none");
     this.res.end();
   } 
-  else if(request.text && botRegexGarrett.test(request.text)) {
+  else if(request.text && botRegexEmma.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Garrett's Duty Dates:\nAug: 12th, 15th \nSept: 3rd, 12th \nOct: 8th, 13th & 14th, 15th \nNov: 5th, 10th & 11th, 26th\nDec: none\nGame Days: Nov 18th");
+    postMessage("Emma's Duty Dates:\nAug: 16th, 23rd, & 30th \nSept: 3rd, 12th \nOct: 8th, 13th & 14th, 15th \nNov: 5th, 10th & 11th, 26th\nDec: none\nGame Days: Nov 18th");
     this.res.end();
   } 
-  else if(request.text && botRegexGeorge.test(request.text)) {
+  else if(request.text && botRegexJen.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://imgur.com/a/MzaOH");
     this.res.end();
   } 
-  else if(request.text && botRegexHaneen.test(request.text)) {
+  else if(request.text && botRegexFrida.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Haneen's Duty Dates:\nAug: 23rd, 27th \nSept: 10th, 24th \nOct: 6th & 7th, 9th, 23rd \nNov: 6th, 28th\nDec: none\nGame Days: Oct 28th");
+    postMessage("Frida's Duty Dates:\nAug: 13th, 20th, & 29th \nSept: 10th, 24th \nOct: 6th & 7th, 9th, 23rd \nNov: 6th, 28th\nDec: none\nGame Days: Oct 28th");
     this.res.end();
   } 
-  else if(request.text && botRegexHeidi.test(request.text)) {
+  else if(request.text && botRegexJordan.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Heidi's Duty Dates:\nAug: 13th, 27th \nSept: 12th, 17th, 29th & 30th \nOct: 1st, 24th \nNov: 9th, 26th\nDec: 1st & 2nd, 6th \nGame Days: Sept 9th");
+    postMessage("Jordan's Duty Dates:\nAug: 14th \nSept: 12th, 17th, 29th & 30th \nOct: 1st, 24th \nNov: 9th, 26th\nDec: 1st & 2nd, 6th \nGame Days: Sept 9th");
     this.res.end();
   } 
-  else if(request.text && botRegexJacob.test(request.text)) {
+  else if(request.text && botRegexMakenzie.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Jacob's Duty Dates:\nAug: 14th \nSept: 4th, 20th, 22nd & 23rd, 26th \nOct: 18th, 22nd, 27th & 28th \nNov: 14th, 29th\nDec: 7th\nGame Days: none");
+    postMessage("Makenzie's Duty Dates:\nAug: 21st, & 28th \nSept: 4th, 20th, 22nd & 23rd, 26th \nOct: 18th, 22nd, 27th & 28th \nNov: 14th, 29th\nDec: 7th\nGame Days: none");
     this.res.end();
   } 
-  else if(request.text && botRegexJared.test(request.text)) {
+  else if(request.text && botRegexMichael.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Jared's Duty Dates:\nAug: 21st, 28th \nSept: 17th, 18th \nOct: 9th, 26th \nNov: 3rd & 4th, 14th, 28th\nDec: 5th\nGame Days: Aug 26th");
+    postMessage("Michaels's Duty Dates:\nAug: 12th, 18th, 19th, 21st, 23rd, & 24th \nSept: 17th, 18th \nOct: 9th, 26th \nNov: 3rd & 4th, 14th, 28th\nDec: 5th\nGame Days: Aug 26th");
     this.res.end();
   } 
-  else if(request.text && botRegexJulianne.test(request.text)) {
+  else if(request.text && botRegexPaige.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Julianne's Duty Dates:\nAug: 18th & 19th, 29th, 31st \nSept: 1st & 2nd, 7th, 24th \nOct: 8th, 19th \nNov: 5th, 12th\nDec: none\nGame Days: Nov 18th");
+    postMessage("Paige's Duty Dates:\nAug: 31st \nSept: 1st & 2nd, 7th, 24th \nOct: 8th, 19th \nNov: 5th, 12th\nDec: none\nGame Days: Nov 18th");
     this.res.end();
   } 
-  else if(request.text && botRegexKeely.test(request.text)) {
+  else if(request.text && botRegexRachel.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Keely's Duty Dates:\nAug: 24th \nSept: 5th, 8th & 9th, 21st, 28th \nOct: 5th, 17th, 20th & 21st \nNov: 7th, 13th\nDec: 3rd \nGame Days: August 26th");
+    postMessage("Rachel's Duty Dates:\nAug: 22nd, 25th, 26th, & 27th \nSept: 5th, 8th & 9th, 21st, 28th \nOct: 5th, 17th, 20th & 21st \nNov: 7th, 13th\nDec: 3rd \nGame Days: August 26th");
     this.res.end();
   } 
-  else if(request.text && botRegexMarilynn.test(request.text)) {
+  else if(request.text && botRegexTaylor.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Marilynn's Duty Dates:\nAug: 16th, 20th \nSept: 6th, 8th & 9th \nOct: 5th, 20th & 21st, 26th, 29th \nNov: 16th, 30th\nDec: 3rd\nGame Days: none");
+    postMessage("Taylor's Duty Dates:\nAug: 16th, 20th \nSept: 6th, 8th & 9th \nOct: 5th, 20th & 21st, 26th, 29th \nNov: 16th, 30th\nDec: 3rd\nGame Days: none");
     this.res.end();
-  } 
-  else if(request.text && botRegexMonica.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Monica's Duty Dates:\nAug: 12th, 15th \nSept: 13th, 25th \nOct: 13th & 14th, 16th, 23rd \nNov: 13th, 17th & 25th, 27th\nDec: 4th\nGame Days: Oct 28th");
-    this.res.end();
-  } 
-  else if(request.text && botRegexOlivia.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Olivia's Duty Dates:\nAug: 22nd \nSept: 11th, 26th \nOct: 2nd, 10th, 29th, 30th \nNov: 3rd & 4th\nDec: 6th, 7th \nGame Days: none");
-    this.res.end();
-  } 
-  else if(request.text && botRegexTavious.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Tavious's Duty Dates:\nAug: 22nd, 24th \nSept: 3rd, 19th \nOct: 6th & 7th, 15th, 24th \nNov: 6th, 9th\nDec: 1st & 2nd\nGame Days:none");
-    this.res.end();
-  } 
-  else if(request.text && botRegexVictoria.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Victoria's Duty Dates:\nAug: 18th & 19th, 20th, 28th \nSept: 13th, 20th \nOct: 12th, 19th \nNov: 15th, 30th \nDec: 8th & 9th\nGame Days: Nov 11th");
-    this.res.end();
-  } 
-  
+  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
