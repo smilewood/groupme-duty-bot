@@ -7,7 +7,12 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJodran = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; botRegexV= /^\/v/; 
+      botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
+      botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
+      botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
+      botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJodran = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; 
+      botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; 
+      botRegexV= /^\/v/; 
 
     //Arrays of duty partners
   var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
