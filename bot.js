@@ -11,8 +11,7 @@ function respond() {
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
       botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJodran = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; 
-      botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; 
-      botRegexV= /^\/v/; 
+      botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; botRegexV= /^\/v/; 
 
     //Arrays of duty partners
   var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
@@ -33,11 +32,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("I am here to help! Here is a list of things I can do:
-                \n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n\n/
-                cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/
-                salt - Don't use unless things get salty\n\nType /yourname and get a list of duty dates.\n\n
-                Let Luke know if something is not working or there is a image or reaction you would like added." );
+    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
     this.res.end();
   } 
   else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
