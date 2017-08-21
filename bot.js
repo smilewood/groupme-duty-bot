@@ -10,7 +10,7 @@ function respond() {
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
-      botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJodran = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; 
+      botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJordan = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; 
       botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; botRegexV= /^\/v/; 
 
     //Arrays of duty partners
