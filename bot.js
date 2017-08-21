@@ -142,7 +142,7 @@ function respond() {
   } 
   else if(request.text && botRegexUp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("New in this update:\nAdded functions:\n\n/birdsupport\n/ashton\n/austin\n/braden\n/cecilia\n/christian\n/david\n/emma\n/frida\n/jordan\n/makenzie\n/luke\n/michael\n/paige\n/rachel\n/taylor\n/v\n");
+    postMessage("New in this update:\nAdded functions:\n\n/birdsupport\n/v\n");
     this.res.end();
   } 
   else if(request.text && botRegexSor.test(request.text)) {
