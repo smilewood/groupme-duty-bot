@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
+      botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
@@ -134,10 +134,15 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://i.imgur.com/B5BSVqH.png");
     this.res.end();
+  }
+  else if(request.text && botRegexBird.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://imgur.com/gallery/CBxba");
+    this.res.end();
   } 
   else if(request.text && botRegexUp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("New in this update:\nAdded functions:\n\n/ashton\n/austin\n/braden\n/cecilia\n/christian\n/david\n/emma\n/frida\n/jen\n/jordan\n/makenzie\n/luke\n/michael\n/paige\n/rachel\n/taylor\n/v\n");
+    postMessage("New in this update:\nAdded functions:\n\nbirdsupport\n/ashton\n/austin\n/braden\n/cecilia\n/christian\n/david\n/emma\n/frida\n/jordan\n/makenzie\n/luke\n/michael\n/paige\n/rachel\n/taylor\n/v\n");
     this.res.end();
   } 
   else if(request.text && botRegexSor.test(request.text)) {
