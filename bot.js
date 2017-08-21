@@ -230,6 +230,11 @@ function respond() {
     postMessage("Taylor's Duty Dates:\nAug: 16th, 20th \nSept: 6th, 8th & 9th \nOct: 5th, 20th & 21st, 26th, 29th \nNov: 16th, 30th\nDec: 3rd\nGame Days: none");
     this.res.end();
   }
+  else if(request.text && botRegexV.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i.imgur.com/sCrUuj6.jpg");
+    this.res.end();
+  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
