@@ -95,70 +95,70 @@ function respond() {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = jan[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
     else if (month == 1) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = feb[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
     else if (month == 2) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = mar[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
     else if (month == 3) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = apr[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
     else if (month == 4) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = may[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
     else if (month == 7) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = aug[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
      else if (month == 8) {
      var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = sep[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
      else if (month == 9) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = oct[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
      else if (month == 10) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = nov[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
      else if (month == 11) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = dec[day+y];
-        days[x] = day+y;
+        days[x] = day+y-1;
       }
     }
     postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
