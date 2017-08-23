@@ -7,6 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
+      botRegexWeek = /^\/thisweek/; botRegexNextWeek = /^\/nextweek/;
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
@@ -38,7 +39,6 @@ function respond() {
   else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
-//    postMessage(d.toString());
     var month = d.getMonth();
     var day = d.getDate();
     
@@ -82,7 +82,78 @@ function respond() {
     }
     this.res.end();
 
-  } 
+  }
+  else if((request.text && botRegexWeek.test(request.text))) {
+    this.res.writeHead(200);
+    var d = convertUTCDateToLocalDate(new Date());
+    var month = d.getMonth();
+    var day = d.getDate();
+    var week = ["","","","","","",""];
+    var people = "";
+    if (month == 0) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = jan[day+y];
+      }
+    }
+    else if (month == 1) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = feb[day+y];
+      }
+    }
+    else if (month == 2) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mar[day+y];
+      }
+    }
+    else if (month == 3) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = apr[day+y];
+      }
+    }
+    else if (month == 4) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = may[day+y];
+      }
+    }
+    else if (month == 7) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = aug[day+y];
+      }
+    }
+     else if (month == 8) {
+     var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = sep[day+y];
+      }
+    }
+     else if (month == 9) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = oct[day+y];
+      }
+    }
+     else if (month == 10) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = nov[day+y];
+      }
+    }
+     else if (month == 11) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = dec[day+y];
+      }
+    }
+    postMessage("This is how the week looks:\nToday: "week[0]"\nTomorrow: "week[1]",\n"week[2]",\n"week[3]",\n"week[4]",\n"week[5]",\n"week[6]);
+    this.res.end();
+
+  }
    else if(request.text && botRegexDuty2.test(request.text)) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
@@ -128,7 +199,8 @@ function respond() {
     }
     this.res.end();
 
-  } 
+  }
+  
   
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
