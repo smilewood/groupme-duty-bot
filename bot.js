@@ -150,7 +150,7 @@ function respond() {
         week[x] = dec[day+y];
       }
     }
-    postMessage("This is how the week looks:\nToday: "week[0]"\nTomorrow: "week[1]",\n"week[2]",\n"week[3]",\n"week[4]",\n"week[5]",\n"week[6]);
+    postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + week[2] + ",\n" + week[3] + ",\n" + week[4] + ",\n" + week[5] + ",\n" + week[6]);
     this.res.end();
 
   }
