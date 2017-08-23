@@ -14,7 +14,7 @@ function respond() {
       botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJordan = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; 
       botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; botRegexV= /^\/v/; 
 
-  var mon = 
+  var mon = [
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
@@ -24,7 +24,7 @@ function respond() {
   ["Ashton and Paige", "Ashton and Paige", "Luke and Frida", "Luke and Michael", "Rachel and Jordan", "Emma and Christian", "Austin and David", "Rachel and Michael", "Rachel and Michael", "Taylor and Christian", "Ashton and Makenzie", "Rachel and Paige", "Cecilia and Luke", "Braden and Austin", "Emma and Austin", "Emma and Austin", "Christian and David", "Ashton and Michael", "Christian and Jordan", "Makenzie and Paige", "Braden and Michael", "Braden and Ashton", "Braden and Ashton", "Taylor and Paige", "Ashton and Luke", "Jordan and Rachel", "Cecilia and Christian", "Michael and David", "Frida and Jordan", "Frida and Jordan", "", ""],
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
-  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""] ]; 
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
