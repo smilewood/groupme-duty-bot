@@ -87,13 +87,15 @@ function respond() {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
     var month = d.getMonth();
-    var day = d.getDate();
+    var day = d.getDate(); //gives back the day of the month + 1
     var week = ["","","","","","",""];
+    var days = ["","","","","","",""];
     var people = "";
     if (month == 0) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         week[x] = jan[day+y];
+        days[x] = day+y;
       }
     }
     else if (month == 1) {
@@ -150,7 +152,7 @@ function respond() {
         week[x] = dec[day+y];
       }
     }
-    postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + week[2] + ",\n" + week[3] + ",\n" + week[4] + ",\n" + week[5] + ",\n" + week[6]);
+    postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
     this.res.end();
 
   }
