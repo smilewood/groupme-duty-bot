@@ -7,23 +7,24 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
+      botRegexWeek = /^\/thisweek/; botRegexNextWeek = /^\/nextweek/;
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
       botRegexFrida = /^\/frida/; botRegexJen = /^\/jen/; botRegexJordan = /^\/jordan/; botRegexMakenzie = /^\/makenzie/; 
       botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylor = /^\/taylor/; botRegexV= /^\/v/; 
 
-    //Arrays of duty partners
-  var jan = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var feb = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var mar = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var apr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var may = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var aug = ["", "", "", "", "", "", "", "", "", "", "", "Michael and Luke", "Frida and Taylor", "Austin and Jordan", "Luke and David", "Emma and Cecilia", "Luke and David", "Luke and Michael", "Luke and Michael", "Frida and Jordan", "Austin and Makenzie", "Rachel and Taylor", "Emma and Michael", "Braden and Michael", "Rachel and Cecilia", "Rachel and Cecilia", "Rachel and David", "Ashton and Makenzie", "Frida and Jordan", "Emma and Cecilia", "Braden and Paige", ""]; 
-  var sep = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var oct = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var nov = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
-  var dec = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
+  var mon = 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "", "", "", "", "", "", "", "", "Michael and Luke", "Frida and Taylor", "Austin and Jordan", "Luke and David", "Emma and Cecilia", "Luke and David", "Luke and Michael", "Luke and Michael", "Frida and Jordan", "Austin and Makenzie", "Rachel and Taylor", "Emma and Michael", "Braden and Michael", "Rachel and Cecilia", "Rachel and Cecilia", "Rachel and David", "Ashton and Makenzie", "Frida and Jordan", "Emma and Cecilia", "Braden and Paige", ""],
+  ["Ashton and Paige", "Ashton and Paige", "Luke and Frida", "Luke and Michael", "Rachel and Jordan", "Emma and Christian", "Austin and David", "Rachel and Michael", "Rachel and Michael", "Taylor and Christian", "Ashton and Makenzie", "Rachel and Paige", "Cecilia and Luke", "Braden and Austin", "Emma and Austin", "Emma and Austin", "Christian and David", "Ashton and Michael", "Christian and Jordan", "Makenzie and Paige", "Braden and Michael", "Braden and Ashton", "Braden and Ashton", "Taylor and Paige", "Ashton and Luke", "Jordan and Rachel", "Cecilia and Christian", "Michael and David", "Frida and Jordan", "Frida and Jordan", "", ""],
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; 
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -32,46 +33,45 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/birdsupport - for when you hit your 'beaking' point\n\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
+    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n/thisweek - Gives the peeps on duty for the next week\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/birdsupport - for when you hit your 'beaking' point\n\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
     this.res.end();
   } 
   else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
-//    postMessage(d.toString());
     var month = d.getMonth();
     var day = d.getDate();
     
     var people = "";
     if (month == 0) {
-      people = jan[day-1];
+      people = mon[0[day-1]];
     }
     else if (month == 1) {
-      people = feb[day-1];
+      people = mon[1[day-1]];
     }
     else if (month == 2) {
-      people = mar[day-1];
+      people = mon[2[day-1]];
     }
     else if (month == 3) {
-      people = apr[day-1];
+      people = mon[3[day-1]];
     }
     else if (month == 4) {
-      people = may[day-1];
+      people = mon[4[day-1]];
     }
     else if (month == 7) {
-      people = aug[day-1];
+      people = mon[5[day-1]];
     }
      else if (month == 8) {
-      people = sep[day-1];
+      people = mon[6[day-1]];
     }
      else if (month == 9) {
-      people = oct[day-1];
+      people = mon[7[day-1]];
     }
      else if (month == 10) {
-      people = nov[day-1];
+      people = mon[8[day-1]];
     }
      else if (month == 11) {
-      people = dec[day-1];
+      people = mon[9[day-1]];
     }
     if (day % 2 == 0) {
       postMessage("Today " + people + " are on duty");
@@ -82,7 +82,91 @@ function respond() {
     }
     this.res.end();
 
-  } 
+  }
+  else if((request.text && botRegexWeek.test(request.text))) {
+    this.res.writeHead(200);
+    var d = convertUTCDateToLocalDate(new Date());
+    var month = d.getMonth();
+    var day = d.getDate(); //gives back the day of the month + 1
+    var week = ["","","","","","",""]; //holds the names of ppl on duty for that week, dynamic
+    var days = ["","","","","","",""];
+    var people = "";
+    if (month == 0) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[0[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+    else if (month == 1) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[1[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+    else if (month == 2) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[2[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+    else if (month == 3) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[3[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+    else if (month == 4) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[4[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+    else if (month == 7) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        if () {
+          week[x] = mon[5[day+y]];
+          days[x] = day+y+1;
+        }
+      }
+    }
+     else if (month == 8) {
+     var y = -1;
+     for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[6[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+     else if (month == 9) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[7[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+     else if (month == 10) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[8[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+     else if (month == 11) {
+      var y = -1;
+      for (var x = 0; x < 7; x++, y++) {
+        week[x] = mon[9[day+y]];
+        days[x] = day+y+1;
+      }
+    }
+    postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
+    this.res.end();
+
+  }
    else if(request.text && botRegexDuty2.test(request.text)) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
@@ -90,34 +174,34 @@ function respond() {
     var day = d.getDate();
     var people = "";
     if (month == 0) {
-      people = jan[day];
+      people = mon[0[day]];
     }
-     else if (month == 1) {
-      people = feb[day];
+    else if (month == 1) {
+      people = mon[1[day]];
     }
     else if (month == 2) {
-      people = mar[day];
+      people = mon[2[day]];
     }
-     else if (month == 3) {
-      people = apr[day];
+    else if (month == 3) {
+      people = mon[3[day]];
     }
     else if (month == 4) {
-      people = may[day];
+      people = mon[4[day]];
     }
-     else if (month == 7) {
-      people = aug[day];
+    else if (month == 7) {
+      people = mon[5[day]];
     }
      else if (month == 8) {
-      people = sep[day];
+      people = mon[6[day]];
     }
      else if (month == 9) {
-      people = oct[day];
+      people = mon[7[day]];
     }
      else if (month == 10) {
-      people = nov[day];
+      people = mon[8[day]];
     }
      else if (month == 11) {
-      people = dec[day];
+      people = mon[9[day]];
     }
     if (day % 2 == 0) {
       postMessage("Tomorrow " + people + " are on duty");
@@ -128,7 +212,8 @@ function respond() {
     }
     this.res.end();
 
-  } 
+  }
+  
   
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
@@ -142,7 +227,7 @@ function respond() {
   } 
   else if(request.text && botRegexUp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("New in this update:\nAdded functions:\n\n/birdsupport\n/ashton\n/austin\n/braden\n/cecilia\n/christian\n/david\n/emma\n/frida\n/jordan\n/makenzie\n/luke\n/michael\n/paige\n/rachel\n/taylor\n/v\n");
+    postMessage("New in this update:\nAdded functions:\n\n/birdsupport\n/v\n/thisweek\n");
     this.res.end();
   } 
   else if(request.text && botRegexSor.test(request.text)) {
@@ -230,6 +315,11 @@ function respond() {
     postMessage("Taylor's Duty Dates:\nAug: 16th, 20th \nSept: 6th, 8th & 9th \nOct: 5th, 20th & 21st, 26th, 29th \nNov: 16th, 30th\nDec: 3rd\nGame Days: none");
     this.res.end();
   }
+  else if(request.text && botRegexV.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i.imgur.com/sCrUuj6.jpg");
+    this.res.end();
+  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -287,4 +377,3 @@ function convertUTCDateToLocalDate(date) {
     return newDate;   
 }
 exports.respond = respond;
-
