@@ -88,7 +88,7 @@ function respond() {
     var d = convertUTCDateToLocalDate(new Date());
     var month = d.getMonth();
     var day = d.getDate(); //gives back the day of the month + 1
-    var week = ["","","","","","",""];
+    var week = ["","","","","","",""]; //holds the names of ppl on duty for that week, dynamic
     var days = ["","","","","","",""];
     var people = "";
     if (month == 0) {
@@ -129,13 +129,19 @@ function respond() {
     else if (month == 7) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = aug[day+y];
-        days[x] = day+y+1;
+        if () {
+          week[x] = aug[day+y];
+          days[x] = day+y+1;
+        }
       }
     }
      else if (month == 8) {
+       
      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
+     for (var x = 0; x < 7; x++, y++) {
+       if (){
+          
+       }
         week[x] = sep[day+y];
         days[x] = day+y+1;
       }
