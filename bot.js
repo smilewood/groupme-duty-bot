@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexWeek = /^\/thisweek/; botRegexNextWeek = /^\/nextweek/;
+      botRegexWeek = /^\/thisweek/;
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
@@ -44,34 +44,34 @@ function respond() {
     
     var people = "";
     if (month == 0) {
-      people = mon[0[day-1]];
+      people = mon[0][day-1];
     }
     else if (month == 1) {
-      people = mon[1[day-1]];
+      people = mon[1][day-1];
     }
     else if (month == 2) {
-      people = mon[2[day-1]];
+      people = mon[2][day-1];
     }
     else if (month == 3) {
-      people = mon[3[day-1]];
+      people = mon[3][day-1];
     }
     else if (month == 4) {
-      people = mon[4[day-1]];
+      people = mon[4][day-1];
     }
     else if (month == 7) {
-      people = mon[5[day-1]];
+      people = mon[5][day-1];
     }
      else if (month == 8) {
-      people = mon[6[day-1]];
+      people = mon[6][day-1];
     }
      else if (month == 9) {
-      people = mon[7[day-1]];
+      people = mon[7][day-1];
     }
      else if (month == 10) {
-      people = mon[8[day-1]];
+      people = mon[8][day-1];
     }
      else if (month == 11) {
-      people = mon[9[day-1]];
+      people = mon[9][day-1];
     }
     if (day % 2 == 0) {
       postMessage("Today " + people + " are on duty");
@@ -94,35 +94,35 @@ function respond() {
     if (month == 0) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[0[day+y]];
+        week[x] = mon[0][day+y];
         days[x] = day+y+1;
       }
     }
     else if (month == 1) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[1[day+y]];
+        week[x] = mon[1][day+y];
         days[x] = day+y+1;
       }
     }
     else if (month == 2) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[2[day+y]];
+        week[x] = mon[2][day+y];
         days[x] = day+y+1;
       }
     }
     else if (month == 3) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[3[day+y]];
+        week[x] = mon[3][day+y];
         days[x] = day+y+1;
       }
     }
     else if (month == 4) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[4[day+y]];
+        week[x] = mon[4][day+y];
         days[x] = day+y+1;
       }
     }
@@ -130,7 +130,7 @@ function respond() {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
         if () {
-          week[x] = mon[5[day+y]];
+          week[x] = mon[5][day+y];
           days[x] = day+y+1;
         }
       }
@@ -138,28 +138,28 @@ function respond() {
      else if (month == 8) {
      var y = -1;
      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[6[day+y]];
+        week[x] = mon[6][day+y];
         days[x] = day+y+1;
       }
     }
      else if (month == 9) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[7[day+y]];
+        week[x] = mon[7][day+y];
         days[x] = day+y+1;
       }
     }
      else if (month == 10) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[8[day+y]];
+        week[x] = mon[8][day+y];
         days[x] = day+y+1;
       }
     }
      else if (month == 11) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[9[day+y]];
+        week[x] = mon[9][day+y];
         days[x] = day+y+1;
       }
     }
@@ -174,34 +174,34 @@ function respond() {
     var day = d.getDate();
     var people = "";
     if (month == 0) {
-      people = mon[0[day]];
+      people = mon[0][day];
     }
     else if (month == 1) {
-      people = mon[1[day]];
+      people = mon[1][day];
     }
     else if (month == 2) {
-      people = mon[2[day]];
+      people = mon[2][day];
     }
     else if (month == 3) {
-      people = mon[3[day]];
+      people = mon[3][day];
     }
     else if (month == 4) {
-      people = mon[4[day]];
+      people = mon[4][day];
     }
     else if (month == 7) {
-      people = mon[5[day]];
+      people = mon[5][day];
     }
      else if (month == 8) {
-      people = mon[6[day]];
+      people = mon[6][day];
     }
      else if (month == 9) {
-      people = mon[7[day]];
+      people = mon[7][day];
     }
      else if (month == 10) {
-      people = mon[8[day]];
+      people = mon[8][day];
     }
      else if (month == 11) {
-      people = mon[9[day]];
+      people = mon[9][day];
     }
     if (day % 2 == 0) {
       postMessage("Tomorrow " + people + " are on duty");
