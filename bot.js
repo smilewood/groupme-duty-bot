@@ -129,19 +129,14 @@ function respond() {
     else if (month == 7) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
-        if () {
           week[x] = aug[day+y];
           days[x] = day+y+1;
-        }
       }
     }
      else if (month == 8) {
        
      var y = -1;
      for (var x = 0; x < 7; x++, y++) {
-       if (){
-          
-       }
         week[x] = sep[day+y];
         days[x] = day+y+1;
       }
