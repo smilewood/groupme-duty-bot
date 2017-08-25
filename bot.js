@@ -150,35 +150,12 @@ function respond() {
     var month = d.getMonth();
     var day = d.getDate();
     var people = "";
-    if (month == 0) {
-      people = mon[0][day];
-    }
-    else if (month == 1) {
-      people = mon[1][day];
-    }
-    else if (month == 2) {
-      people = mon[2][day];
-    }
-    else if (month == 3) {
-      people = mon[3][day];
-    }
-    else if (month == 4) {
-      people = mon[4][day];
-    }
-    else if (month == 7) {
-      people = mon[5][day];
-    }
-     else if (month == 8) {
-      people = mon[6][day];
-    }
-     else if (month == 9) {
-      people = mon[7][day];
-    }
-     else if (month == 10) {
-      people = mon[8][day];
-    }
-     else if (month == 11) {
-      people = mon[9][day];
+    for (x = 0; x < 10; x++) {
+      for (y = 0; y < 32; y++) {
+        if (y==day && x==month) {
+          people = mon[x][y];
+        }
+      }
     }
     if (day % 2 == 0) {
       postMessage("Tomorrow " + people + " are on duty");
