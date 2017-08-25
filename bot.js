@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexWeek = /^\/thisweek/; botRegexNWeek = /^\/nextweek/;
+      botRegexWeek = /^\/thisweek/; botRegexNeek = /^\/nextweek/;
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
@@ -22,8 +22,8 @@ function respond() {
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", "", "", "", "", "", "Michael and Luke", "Frida and Taylor", "Austin and Jordan", "Luke and David", "Emma and Cecilia", "Luke and David", "Luke and Michael", "Luke and Michael", "Frida and Jordan", "Austin and Makenzie", "Rachel and Taylor", "Emma and Michael", "Braden and Michael", "Rachel and Cecilia", "Rachel and Cecilia", "Rachel and David", "Ashton and Makenzie", "Frida and Jordan", "Emma and Cecilia", "Braden and Paige", ""],
-  ["Ashton and Paige", "Ashton and Paige", "Luke and Frida", "Luke and Michael", "Rachel and Jordan", "Emma and Christian", "Austin and David", "Rachel and Michael", "Rachel and Michael", "Taylor and Christian", "Ashton and Makenzie", "Rachel and Paige", "Cecilia and Luke", "Braden and Austin", "Emma and Austin", "Emma and Austin", "Christian and David", "Ashton and Michael", "Christian and Jordan", "Makenzie and Paige", "Braden and Michael", "Braden and Ashton", "Braden and Ashton", "Taylor and Paige", "Ashton and Luke", "Jordan and Rachel", "Cecilia and Christian", "Michael and David", "Frida and Jordan", "Frida and Jordan", "", ""],
+  ["", "", "", "", "", "", "", "", "", "", "", "Michael and Luke", "Frida and Taylor", "Austin and Jordan", "Luke and David", "Emma and Cecilia", "Luke and David", "Luke and Michael", "Luke and Michael", "Frida and Jordan", "Austin and Makenzie", "Rachel and Taylor", "Emma and Michael", "Braden and Michael", "Rachel and Ashton", "Rachel and Cecilia", "Rachel and David", "Ashton and Makenzie", "Frida and Jordan", "Emma and Cecilia", "Braden and Paige", ""],
+  ["Cecilia and Paige", "Ashton and Paige", "Luke and Frida", "Luke and Michael", "Rachel and Jordan", "Emma and Christian", "Austin and David", "Rachel and Michael", "Rachel and Michael", "Taylor and Christian", "Ashton and Makenzie", "Rachel and Paige", "Cecilia and Luke", "Braden and Austin", "Emma and Austin", "Emma and Austin", "Christian and David", "Ashton and Michael", "Christian and Jordan", "Makenzie and Paige", "Braden and Michael", "Braden and Ashton", "Braden and Ashton", "Taylor and Paige", "Ashton and Luke", "Jordan and Rachel", "Cecilia and Christian", "Michael and David", "Frida and Jordan", "Frida and Jordan", "", ""],
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""] ]; 
@@ -105,7 +105,7 @@ function respond() {
 
   }
   //start of next week method
-  else if((request.text && botRegexNWeek.test(request.text))) {
+  else if((request.text && botRegexNeek.test(request.text))) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
     var month = d.getMonth();
@@ -122,9 +122,10 @@ function respond() {
         days[x] = day+y+1;//store the day of the month
       }else {//if we reached the end of the month, we need to iterate the month, and then
         var z = 0;
+        y = 0;
         for (; z < 7 - x; z++, y++){
-          week[z] = mon[month+1][day+y];
-          days[z] = day+y+1;
+          week[z] = mon[month+1][y];
+          days[z] = day+y;
         }
       }
     }
