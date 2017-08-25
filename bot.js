@@ -35,7 +35,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Gives the two people on duty today\n/tomorrow - Gives the two people on duty tomorrow\n/thisweek - Gives the peeps on duty for the next week\n/cool - Sends a cool emoji face\n/update - See what's new in this update\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/birdsupport - for when you hit your 'beaking' point\n\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
+    postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Peeps on duty today\n/tomorrow - Peeps on duty tomorrow\n/thisweek - Peeps for entire week\n/cool - Sends a cool emoji face\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/birdsupport - for when you hit your 'beaking' point\n\n/update - See what's new in this update\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
     this.res.end();
   } 
   else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
@@ -115,7 +115,7 @@ function respond() {
   } 
   else if(request.text && botRegexUp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("New in this update:\nAdded functions:\n\n/birdsupport\n/v\n/thisweek\n");
+    postMessage("New in this update:\nAdded functions:\n\n/thisweek - new and improved\n");
     this.res.end();
   } 
   else if(request.text && botRegexSor.test(request.text)) {
