@@ -42,7 +42,7 @@ function respond() {
     var month = d.getMonth();
     var day = d.getDate();
     
-    var people = "";
+    var people = "incorrect";
     
         
     for (x = 0; x < 10; x++) {
@@ -69,7 +69,7 @@ function respond() {
     var day = d.getDate(); //gives back the day of the month + 1
     var week = ["","","","","","",""]; //holds the names of ppl on duty for that week, dynamic
     var days = ["","","","","","",""];
-    var people = "";
+    var people = "incorrect";
     if (month == 0) {
       var y = -1;
       for (var x = 0; x < 7; x++, y++) {
@@ -149,7 +149,7 @@ function respond() {
     var d = convertUTCDateToLocalDate(new Date());
     var month = d.getMonth();
     var day = d.getDate();
-    var people = "";
+    var people = "incorrect";
     for (x = 0; x < 10; x++) {
       for (y = 0; y < 32; y++) {
         if (y==day && x==month) {
