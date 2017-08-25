@@ -130,7 +130,7 @@ function respond() {
       }
     }
     
-    postMessage("Next week:\n\n" days[0] ": " + week[0] + ",\n"days[1] ": " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
+    postMessage("Next week:\n\n" + days[0] ": " + week[0] + ",\n" + days[1] ": " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
     this.res.end();
 
   }
