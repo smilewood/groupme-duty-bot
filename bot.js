@@ -46,7 +46,7 @@ function respond() {
     
     var people = "incorrect";
     
-    people = month;    
+    people = mon[month][day-1];    
     
     if (day % 2 == 0) {
       postMessage("Today " + people + " are on duty");
@@ -66,76 +66,21 @@ function respond() {
     var week = ["","","","","","",""]; //holds the names of ppl on duty for that week, dynamic
     var days = ["","","","","","",""];
     var people = "incorrect";
-    if (month == 0) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[0][day+y];
-        days[x] = day+y+1;
+    
+    var y = -1;
+    for (x = 0; x < 7; x++, y++) {
+      if (mon[month][day+y]) {//if there is a string
+        week[x] = mon[month][day+y];//store the people on duty for that day
+        days[x] = day+y+1;//store the day of the month
+      }else {//if we reached the end of the month, we need to iterate the month, and then
+        var z = 0;
+        for (; z < 7 - x; z++, y++){
+          week[z] = mon[month+1][day+y];
+          days[z] = day+y+1;
+        }
       }
     }
-    else if (month == 1) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[1][day+y];
-        days[x] = day+y+1;
-      }
-    }
-    else if (month == 2) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[2][day+y];
-        days[x] = day+y+1;
-      }
-    }
-    else if (month == 3) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[3][day+y];
-        days[x] = day+y+1;
-      }
-    }
-    else if (month == 4) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[4][day+y];
-        days[x] = day+y+1;
-      }
-    }
-    else if (month == 7) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-          week[x] = mon[5][day+y];
-          days[x] = day+y+1;
-      }
-    }
-     else if (month == 8) {
-     var y = -1;
-     for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[6][day+y];
-        days[x] = day+y+1;
-      }
-    }
-     else if (month == 9) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[7][day+y];
-        days[x] = day+y+1;
-      }
-    }
-     else if (month == 10) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[8][day+y];
-        days[x] = day+y+1;
-      }
-    }
-     else if (month == 11) {
-      var y = -1;
-      for (var x = 0; x < 7; x++, y++) {
-        week[x] = mon[9][day+y];
-        days[x] = day+y+1;
-      }
-    }
+    
     postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
     this.res.end();
 
@@ -146,14 +91,11 @@ function respond() {
     var month = d.getMonth();
     var day = d.getDate();
     var people = "incorrect";
-    for (x = 0; x < 10; x++) {
-      for (y = 0; y < 32; y++) {
-        if (y==day && x==month) {
-          people = mon[x][y];
-          break;
-        }
-      }
-    }
+    
+     var people = "incorrect";
+    
+    people = mon[month][day];
+     
     if (day % 2 == 0) {
       postMessage("Tomorrow " + people + " are on duty");
     } else if (day % 3 == 0) {
