@@ -7,7 +7,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/; 
-      botRegexWeek = /^\/thisweek/;
+      botRegexWeek = /^\/thisweek/; botRegexNWeek = /^\/nextweek/;
       botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/; 
       botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexBraden = /^\/braden/; 
       botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/; 
@@ -38,6 +38,7 @@ function respond() {
     postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Peeps on duty today\n/tomorrow - Peeps on duty tomorrow\n/thisweek - Peeps for entire week\n/cool - Sends a cool emoji face\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/birdsupport - for when you hit your 'beaking' point\n\n/update - See what's new in this update\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
     this.res.end();
   } 
+  //start of today/duty method
   else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
@@ -56,6 +57,7 @@ function respond() {
     this.res.end();
 
   }
+  //start of week method
   else if((request.text && botRegexWeek.test(request.text))) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
@@ -81,8 +83,8 @@ function respond() {
     
     postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
     this.res.end();
-
   }
+  //start of tomorrow method
    else if(request.text && botRegexDuty2.test(request.text)) {
     this.res.writeHead(200);
     var d = convertUTCDateToLocalDate(new Date());
@@ -99,6 +101,35 @@ function respond() {
     } else {
         postMessage(people + " are out to save the world tomorrow ");
     }
+    this.res.end();
+
+  }
+  //start of next week method
+  else if((request.text && botRegexNWeek.test(request.text))) {
+    this.res.writeHead(200);
+    var d = convertUTCDateToLocalDate(new Date());
+    var month = d.getMonth();
+    var day = d.getDate(); //gives back the day of the month + 1
+    var week = ["","","","","","",""]; //holds the names of ppl on duty for that week, dynamic
+    var days = ["","","","","","",""];
+    var people = "incorrect";
+    
+    
+    var y = 5; //y is the offset of days for the next week, where it starts at -1 for today, it will be 5 for one week ahead
+    for (x = 0; x < 7; x++, y++) {
+      if (mon[month][day+y]) {//if there is a string
+        week[x] = mon[month][day+y];//store the people on duty for that day
+        days[x] = day+y+1;//store the day of the month
+      }else {//if we reached the end of the month, we need to iterate the month, and then
+        var z = 0;
+        for (; z < 7 - x; z++, y++){
+          week[z] = mon[month+1][day+y];
+          days[z] = day+y+1;
+        }
+      }
+    }
+    
+    postMessage("This is how the week looks:\nToday: " + week[0] + "\nTomorrow: " + week[1] + ",\n" + days[2] + ": " + week[2] + ",\n" + days[3] + ": " + week[3] + ",\n" + days[4] + ": " + week[4] + ",\n" + days[5] + ": " + week[5] + ",\n" + days[6] + ": " + week[6]);
     this.res.end();
 
   }
