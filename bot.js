@@ -44,15 +44,8 @@ function respond() {
     
     var people = "incorrect";
     
-        
-    for (x = 0; x < 10; x++) {
-      for (y = 0; y < 32; y++) {
-        if (y==day-1 && x==month) {
-          people = mon[x][y];
-          break;
-        }
-      }
-    }
+    people = mon[month][day-1];    
+    
     if (day % 2 == 0) {
       postMessage("Today " + people + " are on duty");
     } else if (day % 3 == 0) {
