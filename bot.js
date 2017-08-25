@@ -125,7 +125,7 @@ function respond() {
         y = 0;
         for (; z < 7 - x; z++, y++){
           week[z] = mon[month+1][y];
-          days[z] = day+y;
+          days[z] = y;
         }
       }
     }
