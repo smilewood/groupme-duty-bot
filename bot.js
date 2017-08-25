@@ -44,7 +44,7 @@ function respond() {
     
     var people = "incorrect";
     
-    people = mon[month][day-1];    
+    people = month;    
     
     if (day % 2 == 0) {
       postMessage("Today " + people + " are on duty");
