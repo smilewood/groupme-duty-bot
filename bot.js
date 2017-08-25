@@ -49,6 +49,7 @@ function respond() {
       for (y = 0; y < 32; y++) {
         if (y==day-1 && x==month) {
           people = mon[x][y];
+          break;
         }
       }
     }
@@ -154,6 +155,7 @@ function respond() {
       for (y = 0; y < 32; y++) {
         if (y==day && x==month) {
           people = mon[x][y];
+          break;
         }
       }
     }
