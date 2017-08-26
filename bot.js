@@ -78,6 +78,7 @@ function respond() {
           week[z] = mon[month+1][day+y];
           days[z] = day+y+1;
         }
+        break;
       }
     }
     
