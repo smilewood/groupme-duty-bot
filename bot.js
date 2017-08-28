@@ -115,6 +115,22 @@ function respond() {
     var days = ["","","","","","",""];
     var people = "incorrect";
     
+    //find the first date that is empty
+    var tracker = 0;
+    for(x = 0; x < 32; x++) {
+      if(!mon[month][x]){//today is empty, then 
+        tracker = x;//store the date that is empty
+      }
+    }
+    //this is the num of iters before incrementing to next month
+    tracker = tracker - day;
+    for (x = 6; x < tracker +6; x++){
+      week[x-6] = mon[month][day+x]
+    }
+    //iter'd thru all of current month remaining, now iter thru next month if needed
+    while
+    
+    
     for(x = 6; x < 13; x++) {
       if(mon[month][day+x]){
         week[x-6] = mon[month][day+x];
