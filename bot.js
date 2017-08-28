@@ -115,20 +115,15 @@ function respond() {
     var days = ["","","","","","",""];
     var people = "incorrect";
     
-    
-    var y = 5; //y is the offset of days for the next week, where it starts at -1 for today, it will be 5 for one week ahead
-    for (x = 0; x < 7; x++, y++) {
-      if (mon[month][day+y]) {//if there is a string
-        week[x] = mon[month][day+y];//store the people on duty for that day
-        days[x] = day+y+1;//store the day of the month
-      }else {//if we reached the end of the month, we need to iterate the month, and then
-        var z = 0;
-        y = 0;
-        for (; z < 7 - x; z++, y++){
-          week[z] = mon[month+1][y];
-          days[z] = y+1;
+    for(x = 6; x < 13; x++) {
+      if(mon[month][day+x]){
+        week[x-6] = mon[month][day+x];
+        days[x-6] = day+x;
+      }else {
+        for(y = 0; x < 13;x++,y++){
+          week[x-6] = mon[month+1][y];
+          days[x-6] = y;
         }
-        break;
       }
     }
     
