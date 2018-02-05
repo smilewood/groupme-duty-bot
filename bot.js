@@ -16,8 +16,8 @@ function respond() {
 
   
   var mon = [["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-  ["", "", "", "David and Austin", "Makenzie and Mike", "Christian and Emma", "Ally and Austin", "Taylor and Cecilia", "Paige and Mike", "Luke and Mike", "Rachel and Ally", "Cecilia and ", "Ally and Ashton", "Jordan and Paige", "David and ", "David and ", "Luke and Mike", "Paige and Makenzie", "Emma and Rachel", "Ally and Luke", "David and Ashton", "Emma and Ally", "Mike and Ally", "Rachel and ", "Emma and Rachel", "David and Ashton", "Christian and Ally", "", "", "", "", ""], 
-  ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
+  ["", "", "", "empty", "McKenzie and Mike", "Christian and Emma", "Ally and Austin", "Taylor and Cecilia", "Paige and Mike", "Luke and Mike", "Rachel and Ally", "Cecilia and ", "Ally and Ashton", "Jordan and Paige", "David and ", "David and ", "Luke and Mike", "Paige and Makenzie", "Emma and Rachel", "Ally and Luke", "David and Ashton", "Emma and Ally", "Mike and Ally", "Rachel and ", "Emma and Rachel", "David and Ashton", "Christian and Ally", "", "", "", "", ""], 
+  ["Taylor and Jordan", "Taylor and Emma", "Taylor and Emma", "Luke and Mike", "Makenzie and Paige", "Racel and ", "Ally and Austin", "David and Taylor", "Emma and Ashton", "", "", "", "", "", "", "", "", "Luke and Makenzie", "Luke and Ashton", "Christian and ", "Paige and Ally", "Austin and Cecilia", "Makenzie and Austin", "Makenzie and Austin", "Ashton and ", "Jordan and Mike", "Paige and Emma", "Makenzie and ", "Cecilia and Ashton", "Ally and Christian", "Ally and Christian", ""], 
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], 
   ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]];
 
