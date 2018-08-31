@@ -15,57 +15,23 @@ function respond() {
   botRegexUp = /^\/update/;
   botRegexSor = /^\/sorry/;
   botRegexDuty3 = /^\/today/;
-  botRegexLuke = /^\/luke/;
-  botRegexAshton = /^\/ashton/;
-  botRegexAustin = /^\/austin/;
-  botRegexAlly = /^\/braden/;
-  botRegexCecilia = /^\/cecilia/;
-  botRegexChristian = /^\/christian/;
-  botRegexDavid = /^\/david/;
-  botRegexEmma = /^\/Emma/;
-  botRegexTaylor = /^\/frida/;
-  botRegexJen = /^\/jen/;
-  botRegexJordan = /^\/jordan/;
-  botRegexMakenzie = /^\/makenzie/;
-  botRegexMichael = /^\/michael/;
-  botRegexPaige = /^\/paige/;
-  botRegexRachel = /^\/rachel/;
-  botRegexTaylorL = /^\/taylor/;
-  botRegexV = /^\/v/;
+
 
   var mon = [["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
     "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
     "25", "26", "27", "28", "29", "30", "31", "32?"],
-    ["", "", "", "empty", "McKenzie and Mike", "Christian and Emma",
-      "Ally and ", "Taylor and Cecilia", "Paige and Mike", "Paige and Mike",
-      "Luke and Mike", "Rachel and Ally", "Cecilia and ", "Ally and Ashton",
-      "Jordan and Paige", "David and ", "David and ", "Luke and Mike",
-      "Paige and Makenzie", "Emma and Rachel", "Ally and Luke",
-      "David and Ashton", "Emma and Ally", "Mike and Ally", "Rachel and ",
-      "Emma and Rachel", "David and Ashton", "Christian and Ally", "", "", "",
-      ""],
-    ["Taylor and Jordan", "Taylor and Emma", "Taylor and Emma", "Luke and Mike",
-      "Makenzie and Paige", "Racel and ", "Ally and Austin", "David and Taylor",
-      "Emma and Ashton", "", "", "", "", "", "", "", "", "Luke and Makenzie",
-      "Luke and Ashton", "Christian and ", "Paige and Ally",
-      "Austin and Cecilia", "Makenzie and Austin", "Makenzie and Austin",
-      "Ashton and ", "Jordan and Mike", "Paige and Emma", "Makenzie and ",
-      "Cecilia and Ashton", "Ally and Christian", "Ally and Christian", ""],
-    ["", "", "", "Ashton and Ally", "David and Cecilia", "David and Rcahel",
-      "David and Rachel", "Mike and Rachel", "Emma and Rachel",
-      "David and Christian", "Makenzie and Ally", "David and ",
-      "Austin and Emma", "Austin and Makenzie", "Emma and Rahcel",
-      "Paige and Mike", "Rachel and Emma", "Makenzie and Austin",
-      "Christian and Taylor L", "Jordan and Cecilia", "Jordan and Cecilia",
-      "Jordan and Christian", "Ashton and Paige", "Jordan and Makenzie",
-      "Christain and Paige", "Cecilia and Taylor L", "Makenzie and Paige",
-      "Makenzie and Paige", "Ashton and Luke", "Austin and Luke", "", ""],
-    ["Mike and David", "Christian and Makenzie", "Cecilia and Taylor L",
-      "Cecilia and Rachel", "Cecilia and Rachel", "Ally and Cecilia",
-      "Taylor L and Jordan", "Austin and Paige", "Ally and Luke",
-      "Cecilia and Taylor L", "Christain and Mike", "Christain and Luke", "",
-      "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-      ""],
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+      "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+      "25", "26", "27", "28", "29", "30", "31", "32?"],
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+      "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+      "25", "26", "27", "28", "29", "30", "31", "32?"],
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+      "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+      "25", "26", "27", "28", "29", "30", "31", "32?"],
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+      "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+      "25", "26", "27", "28", "29", "30", "31", "32?"],
     ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14",
       "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26",
       "27", "28", "29", "30", "31", "32?"],
@@ -192,91 +158,7 @@ function respond() {
     postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
     this.res.end();
   }
-  else if (request.text && botRegexLuke.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Luke's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexAshton.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Ashton's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexAustin.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Austin's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexAlly.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Braden's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexCecilia.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Cecilia's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexChristian.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Christian's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexDavid.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("David's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexEmma.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Emma's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexJen.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://imgur.com/a/MzaOH");
-    this.res.end();
-  }
-  else if (request.text && botRegexTaylor.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Frida's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexJordan.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Jordan's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexMakenzie.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Makenzie's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexMichael.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Michaels's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexPaige.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Paige's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexRachel.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Rachel's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexTaylorL.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Taylor's Duty Dates:");
-    this.res.end();
-  }
-  else if (request.text && botRegexV.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://i.imgur.com/sCrUuj6.jpg");
-    this.res.end();
-  }
+
   else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -339,12 +221,17 @@ exports.respond = respond;
 
 
 //======================================================================
+var gapi = require('gapi');
+
 var clientId = '277429790580-paibcs058ua1t69q4e32a1v3n1aehles.apps.googleusercontent.com'; //choose web app client Id, redirect URI and Javascript origin set to http://localhost
 var apiKey = 'AIzaSyCkNl5cB_Wir-CTdTTJNGxVi9HcP1xpn9U'; //choose public apiKey, any IP allowed (leave blank the allowed IP boxes in Google Dev Console)
 var userEmail = "laurelvillage1819@gmail.com"; //your calendar Id
 var userTimeZone = "Denver"; //example "Rome" "Los_Angeles" ecc...
 var maxRows = 10; //events to shown
 var calName = "Duty"; //name of calendar (write what you want, doesn't matter)
+
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
 
 var scopes = 'https://www.googleapis.com/auth/calendar';
 
