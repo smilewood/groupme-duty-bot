@@ -58,9 +58,9 @@ function makeApiCall() {
   });
 }
 
-export function getTodayDutyPeople() {
-  handleClientLoad()
-  makeApiCall()
-  return onDuty;
+  function getTodayDutyPeople() {
+    handleClientLoad()
+    makeApiCall()
+    return onDuty;
+  }
 
-}
