@@ -221,7 +221,7 @@ exports.respond = respond;
 
 
 //======================================================================
-var gapi = require('gapi');
+var gapi = require('googleapis');
 
 var clientId = '277429790580-paibcs058ua1t69q4e32a1v3n1aehles.apps.googleusercontent.com'; //choose web app client Id, redirect URI and Javascript origin set to http://localhost
 var apiKey = 'AIzaSyCkNl5cB_Wir-CTdTTJNGxVi9HcP1xpn9U'; //choose public apiKey, any IP allowed (leave blank the allowed IP boxes in Google Dev Console)
