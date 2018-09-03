@@ -390,9 +390,7 @@ function getAccessToken(oAuth2Client, callback) {
     input: process.stdin,
     output: process.stdout,
   });
-  rl.question('Enter the code from that page here: ', (code) => {
-    rl.close();
-    code = '4/TwDda1LChLisenQLB5DJo34LZZORxNeVdyxjI2OU99e9yMstyZxu4rY';
+    const code = '4/TwDda1LChLisenQLB5DJo34LZZORxNeVdyxjI2OU99e9yMstyZxu4rY';
     oAuth2Client.getToken(code, (err, token) => {
       if (err) return console.error('Error retrieving access token', err);
       oAuth2Client.setCredentials(token);
@@ -402,7 +400,7 @@ function getAccessToken(oAuth2Client, callback) {
         console.log('Token stored to', TOKEN_PATH);
       });
       callback(oAuth2Client);
-    });
+
   });
 }
 /**
