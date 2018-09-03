@@ -222,7 +222,7 @@ exports.respond = respond;
 
 //======================================================================
 var gapi = require('googleapis');
-
+const calender = gapi.calendar
 var clientId = '277429790580-paibcs058ua1t69q4e32a1v3n1aehles.apps.googleusercontent.com'; //choose web app client Id, redirect URI and Javascript origin set to http://localhost
 var apiKey = 'AIzaSyCkNl5cB_Wir-CTdTTJNGxVi9HcP1xpn9U'; //choose public apiKey, any IP allowed (leave blank the allowed IP boxes in Google Dev Console)
 var userEmail = "laurelvillage1819@gmail.com"; //your calendar Id
@@ -328,6 +328,39 @@ function HandleGoogleApiLibrary() {
 }
 
 function getTodayDutyPeople() {
-  HandleGoogleApiLibrary();
+
+  listEvents();
   return onDuty;
+}
+
+//==================================================================================================================
+
+
+const {google} = require('googleapis');
+
+// If modifying these scopes, delete token.json.
+const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
+
+
+function listEvents() {
+  const calendar = google.calendar('https://www.googleapis.com/discovery/v1/apis?name=calendar');
+  calendar.events.list({
+    calendarId: 'primary',
+    timeMin: (new Date()).toISOString(),
+    maxResults: 10,
+    singleEvents: true,
+    orderBy: 'startTime',
+  }, (err, res) => {
+    if (err) return console.log('The API returned an error: ' + err);
+    const events = res.data.items;
+    if (events.length) {
+      console.log('Upcoming 10 events:');
+      events.map((event, i) => {
+        const start = event.start.dateTime || event.start.date;
+        console.log(`${start} - ${event.summary}`);
+      });
+    } else {
+      console.log('No upcoming events found.');
+    }
+  });
 }
