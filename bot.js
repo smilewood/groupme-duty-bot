@@ -237,6 +237,7 @@ var scopes = 'https://www.googleapis.com/auth/calendar';
 
 //--------------------- client CALL
 function handleClientLoad() {
+
   gapi.client.setApiKey(apiKey);
   checkAuth();
 }
@@ -265,6 +266,7 @@ var onDuty;
 //--------------------- API CALL itself
 function makeApiCall() {
   var today = new Date(); //today date
+
   gapi.client.load('calendar', 'v3', function () {
     var request = gapi.client.calendar.events.list({
       'calendarId': userEmail,
@@ -287,7 +289,6 @@ function makeApiCall() {
 }
 
 function getTodayDutyPeople() {
-  handleClientLoad()
-  makeApiCall()
+  gapi.load("client", handleClientLoad());
   return onDuty;
 }
