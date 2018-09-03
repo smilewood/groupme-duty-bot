@@ -392,7 +392,7 @@ function getAccessToken(oAuth2Client, callback) {
   });
   rl.question('Enter the code from that page here: ', (code) => {
     rl.close();
-    oAuth2Client.getToken(code, (err, token) => {
+    oAuth2Client.getToken(code, (err, '4/TwDda1LChLisenQLB5DJo34LZZORxNeVdyxjI2OU99e9yMstyZxu4rY') => {
       if (err) return console.error('Error retrieving access token', err);
       oAuth2Client.setCredentials(token);
       // Store the token to disk for later program executions
