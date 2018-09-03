@@ -288,15 +288,46 @@ function makeApiCall() {
   });
 }
 
-function getTodayDutyPeople() {
-  gapi.load('client', {
+function HandleGoogleApiLibrary() {
+  // Load "client" & "auth2" libraries
+  gapi.load('client:auth2',  {
     callback: function() {
-      // Handle gapi.client initialization.
-    handleClientLoad();
+      // Initialize client & auth libraries
+      gapi.client.init({
+        apiKey: apiKey,
+        clientId: clientId,
+        scope: 'https://www.googleapis.com/auth/calendar'
+      }).then(
+          function(success) {
+            var request = gapi.client.calendar.events.list({
+              'calendarId': userEmail,
+              'timeZone': userTimeZone,
+              'singleEvents': true,
+              'timeMin': today.toISOString(), //gathers only events not happened yet
+              'maxResults': maxRows,
+              'orderBy': 'startTime'
+            });
+            request.execute(function (resp) {
+                  var onDutyToday = [];
+                  for (var i = 0; i < resp.items.length; i++) {
+                    var item = resp.items[i];
+                    var name = item.summary;
+                    onDutyToday.append(name);
+                  }
+                  onDuty = onDutyToday;
+          }},
+          function(error) {
+            console.log("API failed to start")
+          }
+      );
     },
     onerror: function() {
-      // Handle loading error.
-      alert('gapi.client failed to load!');
-    }});
+      console.log("library failed to load")
+    }
+  });
+}
+
+function getTodayDutyPeople() {
+  HandleGoogleApiLibrary();
   return onDuty;
 }
