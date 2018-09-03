@@ -289,6 +289,6 @@ function makeApiCall() {
 }
 
 function getTodayDutyPeople() {
-  gapi.load("client", handleClientLoad());
+  gapi.load('client', handleClientLoad());
   return onDuty;
 }
