@@ -344,7 +344,7 @@ const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
 
 
 function listEvents() {
-  const calendar = google.calendar('v3');
+  const calendar = google.calendar('v3', apiKey);
   calendar.events.list({
     calendarId: 'primary',
     timeMin: (new Date()).toISOString(),
