@@ -68,7 +68,7 @@ function respond() {
   else if ((request.text && botRegexDuty.test(request.text)) || (request.text
           && botRegexDuty3.test(request.text))) {
     this.res.writeHead(200);
-    postMessage(getTodayDutyPeople());
+    postMessage(getTodayDutyPeople()[0]);
     /*
     var d = convertUTCDateToLocalDate(new Date());
     var month = d.getMonth();
@@ -330,7 +330,8 @@ function HandleGoogleApiLibrary() {
 function getTodayDutyPeople() {
 
   listEvents();
-  return onDuty;
+  console.log(onDuty);
+  return ["no crashes?"];
 }
 
 //==================================================================================================================
