@@ -315,7 +315,7 @@ function HandleGoogleApiLibrary() {
                     onDutyToday.append(name);
                   }
                   onDuty = onDutyToday;
-          }},
+          })},
           function(error) {
             console.log("API failed to start")
           }
