@@ -238,7 +238,7 @@ var scopes = 'https://www.googleapis.com/auth/calendar';
 //--------------------- client CALL
 function handleClientLoad() {
 
-  gapi.client.setApiKey(apiKey);
+  gapi.client.init({apiKey:apiKey, clientId: clientId});
   checkAuth();
 }
 
@@ -289,6 +289,14 @@ function makeApiCall() {
 }
 
 function getTodayDutyPeople() {
-  gapi.load('client', handleClientLoad());
+  gapi.load('client', {
+    callback: function() {
+      // Handle gapi.client initialization.
+    handleClientLoad();
+    },
+    onerror: function() {
+      // Handle loading error.
+      alert('gapi.client failed to load!');
+    }});
   return onDuty;
 }
