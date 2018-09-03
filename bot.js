@@ -329,7 +329,7 @@ function HandleGoogleApiLibrary() {
 
 function getTodayDutyPeople() {
 
-  loadClient();
+  listEvents();
   console.log(onDuty);
   return ["no crashes?"];
 }
@@ -407,8 +407,8 @@ function getAccessToken(oAuth2Client, callback) {
  * Lists the next 10 events on the user's primary calendar.
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
-function listEvents(auth) {
-  const calendar = google.calendar({version: 'v3', auth});
+function listEvents() {
+  const calendar = google.calendar({version: 'v3', apiKey});
   calendar.events.list({
     calendarId: 'primary',
     timeMin: (new Date()).toISOString(),
