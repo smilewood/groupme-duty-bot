@@ -9,14 +9,16 @@ function respond() {
         botRegex = /^\/cool/; botRegexSalt = /^\/salt/; botRegexBird=/^\/birdsupport/; botRegexDuty = /^\/duty/; botRegexDuty2 = /^\/tomorrow/;
     botRegexWeek = /^\/thisweek/;
     botRegexHelp = /^\/help/; botRegexUp = /^\/update/; botRegexSor = /^\/sorry/; botRegexDuty3 = /^\/today/;
-    botRegexLuke = /^\/luke/; botRegexAshton = /^\/ashton/; botRegexAustin = /^\/austin/; botRegexAlly = /^\/braden/;
-    botRegexCecilia = /^\/cecilia/; botRegexChristian = /^\/christian/; botRegexDavid = /^\/david/; botRegexEmma = /^\/Emma/;
-    botRegexTaylor = /^\/frida/; botRegexJen = /^\/jen/; botRegexJordan = /^\/jordan/; botRegexMakenzie = /^\/makenzie/;
-    botRegexMichael = /^\/michael/; botRegexPaige = /^\/paige/; botRegexRachel = /^\/rachel/; botRegexTaylorL = /^\/taylor/; botRegexV= /^\/v/;
+    
 
 
     var mon = [["jan"],["feb"],["mar"],["apr"],["may"],["june"],["july"],["aug"],
-               ["1", "2","Dominic and Taylor", "Miles and Rachel O", "Monica and Paige", "Lyn and Morgan", "Miles and Monica", "Miles and Monica", "Lawrence", "Dominic and Jordan", "Jessica and Miles", "Monica and Tad", "Hannah and Morgan"]];
+               ["1", "2","Dominic and Taylor", "Miles and Rachel O", "Monica and Paige", "Lyn and Morgan", 
+                "Miles and Monica", "Miles and Monica", "Lawrence", "Dominic and Jordan", "Jessica and Miles", 
+                "Monica and Tad", "Hannah and Morgan", "Paige and Rachel M", "Paige and Rachel M", "Lawrence and Rachel M", 
+                "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad", "Hannah and Lyn", "Dominic and Hannah",
+                "Dominic and Hannah", "Rachel M", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige", 
+                "Lyn and Morgan", "Jessica and Rachel O", "Jessica and Rachel O", "Lawrence"]];
 
     if(request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
@@ -25,7 +27,12 @@ function respond() {
     }
     else if(request.text && botRegexHelp.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Peeps on duty today\n/tomorrow - Peeps on duty tomorrow\n/thisweek - Peeps for entire week\n/cool - Sends a cool emoji face\n/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/birdsupport - for when you hit your 'beaking' point\n\n/update - See what's new in this update\nType /yourname and get a list of duty dates.\n\nLet Luke know if something is not working or there is a image or reaction you would like added." );
+        postMessage("I am here to help! Here is a list of things I can do:\n/duty or /today - Peeps on duty today"+
+                    "\n/tomorrow - Peeps on duty tomorrow\n/thisweek - Peeps for entire week\n/cool - Sends a cool emoji face\n"+
+                    "/sorry - When you are truly sorry\n/salt - Don't use unless things get salty\n/"+
+                    "birdsupport - for when you hit your 'beaking' point\n\n"+
+                    "/update - See what's new in this update.\n\nLet Miles or Paige know if something is not working or there is"+
+                    "a image or reaction you would like added." );
         this.res.end();
     }
     else if((request.text && botRegexDuty.test(request.text)) || (request.text && botRegexDuty3.test(request.text))) {
@@ -37,11 +44,11 @@ function respond() {
         people = mon[month][day-1];
 
         if (day % 2 == 0) {
-            postMessage("Today " + people + " are on duty");
+            postMessage("Today " + people + " are on duty!");
         } else if (day % 3 == 0) {
-            postMessage("Today's lucky winners are " + people);
+            postMessage("Today's duty team is " + people + "!");
         } else {
-            postMessage(people + " get to go fight the good fight tonight");
+            postMessage(people + " are the duty team for tonight!");
         }
         this.res.end();
 
@@ -105,97 +112,12 @@ function respond() {
     }
     else if(request.text && botRegexUp.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("New in this update:\nAdded functions:\n\n/thisweek - new and improved\n");
+        postMessage("New in this update:\nUpdated to Fall 2018 staff duty schedule for September.");
         this.res.end();
     }
     else if(request.text && botRegexSor.test(request.text)) {
         this.res.writeHead(200);
         postMessage("https://media0.giphy.com/media/RFDXes97gboYg/200_s.gif");
-        this.res.end();
-    }
-    else if(request.text && botRegexLuke.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Luke's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexAshton.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Ashton's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexAustin.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Austin's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexAlly.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Braden's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexCecilia.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Cecilia's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexChristian.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Christian's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexDavid.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("David's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexEmma.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Emma's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexJen.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("https://imgur.com/a/MzaOH");
-        this.res.end();
-    }
-    else if(request.text && botRegexTaylor.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Frida's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexJordan.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Jordan's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexMakenzie.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Makenzie's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexMichael.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Michaels's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexPaige.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Paige's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexRachel.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Rachel's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexTaylorL.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("Taylor's Duty Dates:");
-        this.res.end();
-    }
-    else if(request.text && botRegexV.test(request.text)) {
-        this.res.writeHead(200);
-        postMessage("http://i.imgur.com/sCrUuj6.jpg");
         this.res.end();
     }
     else {
