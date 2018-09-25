@@ -79,7 +79,7 @@ function respond() {
                 for (; z < 7 - x; z++, y++){
                     week[z+1+x] = mon[month+1][z];
                     days[z+1+x] = z + 1;
-                    console.log("setting ["+(z+1+x)+"] to '" + mon[month+1][z] + "'"
+                    console.log("setting ["+(z+1+x)+"] to '" + mon[month+1][z] + "'");
                 }
                 break;
             }
