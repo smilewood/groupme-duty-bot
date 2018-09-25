@@ -18,11 +18,11 @@ function respond() {
                 "Monica and Tad", "Hannah and Morgan", "Paige and Rachel M", "Paige and Rachel M", "Lawrence and Rachel M", 
                 "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad", "Hannah and Lyn", "Dominic and Hannah",
                 "Dominic and Hannah", "Rachel M", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige", 
-                "Lyn and Morgan", "Jessica and Rachel O", "Jessica and Rachel O", "Lawrence"],
+                "Lyn and Morgan", "Rachel^2", "Jessica and Rachel O", "Lawrence and Christian"],
                ["Dominic and Jordan", "Jessica and Miles", "Monica and Tad", "Hannah and Morgan", "Lyn and Monica", "Lyn and Monica",
                  "Lawrence and Rachel M", "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad", "Hannah and Lyn",
-                 "Lawrence and Tad", "Lawrence and Tad", "Rachel M", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige",
-                  "Lyn and Morgan", "Hannah and Rachel M", "Hannah and Rachel M", "Lawrence", "Dominic and Jordan", "Jessica and Miles",
+                 "Lawrence and Tad", "Lawrence and Tad", "Rachel M and Christian", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige",
+                  "Lyn and Morgan", "Hannah and Rachel M", "Hannah and Rachel M", "Lawrence and Christian", "Dominic and Jordan", "Jessica and Miles",
                   "Monica and Tad", "Hannah and Morgan", "Morgan and Paige", "Monica and Paige", "Lawrence and Rachel M",
                   "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad"]];
 
