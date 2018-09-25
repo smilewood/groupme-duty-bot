@@ -18,7 +18,7 @@ function respond() {
                 "Monica and Tad", "Hannah and Morgan", "Paige and Rachel M", "Paige and Rachel M", "Lawrence and Rachel M", 
                 "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad", "Hannah and Lyn", "Dominic and Hannah",
                 "Dominic and Hannah", "Rachel M", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige", 
-                "Lyn and Morgan", "Jessica and Rachel O", "Jessica and Rachel O", "Lawrence"]
+                "Lyn and Morgan", "Jessica and Rachel O", "Jessica and Rachel O", "Lawrence"],
                ["Dominic and Jordan", "Jessica and Miles", "Monica and Tad", "Hannah and Morgan", "Lyn and Monica", "Lyn and Monica",
                  "Lawrence and Rachel M", "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad", "Hannah and Lyn",
                  "Lawrence and Tad", "Lawrence and Tad", "Rachel M", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige",
