@@ -77,9 +77,9 @@ function respond() {
                 console.log("next month");
                 var z = 0;
                 for (; z < 7 - x; z++, y++){
-                    week[z+1+x] = mon[month+1][z];
-                    days[z+1+x] = z + 1;
-                    console.log("setting ["+(z+1+x)+"] to '" + mon[month+1][z] + "'");
+                    week[z+x] = mon[month+1][z];
+                    days[z+x] = z + 1;
+                    console.log("setting ["+(z+x)+"] to '" + mon[month+1][z] + "'");
                 }
                 break;
             }
