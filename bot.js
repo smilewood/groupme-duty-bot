@@ -74,11 +74,14 @@ function respond() {
                 week[x] = mon[month][day+y];//store the people on duty for that day
                 days[x] = day+y+1;//store the day of the month
             }else {//if we reached the end of the month, we need to iterate the month, and then
+                console.log("next month");
                 var z = 0;
                 for (; z < 7 - x; z++, y++){
-                    week[z] = mon[month+1][z + 1];
-                    days[z] = z + 1;
+                    week[z+x] = mon[month+1][z];
+                    days[z+x] = z + 1;
+                    console.log("setting ["+(z+x)+"] to '" + mon[month+1][z] + "'");
                 }
+                break;
             }
         }
 
