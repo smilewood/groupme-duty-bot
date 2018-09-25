@@ -76,8 +76,8 @@ function respond() {
             }else {//if we reached the end of the month, we need to iterate the month, and then
                 var z = 0;
                 for (; z < 7 - x; z++, y++){
-                    week[z] = mon[month+1][z + 1];
-                    days[z] = z + 1;
+                    week[z+1+x] = mon[month+1][z];
+                    days[z+1+x] = z + 1;
                 }
             }
         }
