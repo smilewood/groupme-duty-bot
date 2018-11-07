@@ -24,7 +24,12 @@ function respond() {
                  "Lawrence and Tad", "Lawrence and Tad", "Rachel M and Christian", "Dominic and Taylor", "Miles and Rachel O", "Monica and Paige",
                   "Lyn and Morgan", "Hannah and Rachel M", "Hannah and Rachel M", "Lawrence and Christian", "Dominic and Jordan", "Jessica and Miles",
                   "Monica and Tad", "Hannah and Morgan", "Morgan and Paige", "Monica and Paige", "Lawrence and Rachel M",
-                  "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad"]];
+                  "Jordan and Taylor", "Jessica and Rachel O", "Paige and Tad"],
+               ["1","2","3","4","5", "Miles and Rachel O", "Monica and Paige", "Dominic and Lyn", "Jordan and Paige",
+                "Jordan and Paige", "Rachel M and Taylor", "Dominic and Jordan", "Jessica and Miles", "Monica and Tad", 
+                "Hannah and Morgan", "Dominic and Jordan", "Fall break", "Fall break", "Fall break", "Fall break", "Fall break",
+                "Fall break", "Fall break", "Fall break", "Lawrence and Rachel M", "Jordan and Taylor", "Jessica and Rachel O",
+               "Paige and Tad", "Hannah and Lyn", "Rachel M and Lawrence"]];
 
     if(request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
